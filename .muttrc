@@ -9,8 +9,8 @@ set spoolfile="imaps://grjug@zimbra.smile.fr/INBOX"
 set folder="imaps://grjug@zimbra.smile.fr/"
 set record="=Sent"
 set postponed="=Drafts"
-mailboxes = =INBOX/Jenkins/Solucom
-mailboxes = =INBOX/Redmine/Solucom
+#mailboxes = =INBOX/Jenkins/Solucom
+#mailboxes = =INBOX/Redmine/Solucom
 
 set header_cache="/home/gregg/Mail"
 set message_cachedir="/home/gregg/Mail"
@@ -19,13 +19,17 @@ set timeout=60    # mutt 'presses' (like) a key for you (while you're idle)
                   # each x sec to trigger the thing below
 set mail_check=30  # mutt checks for new mails on every keystroke
                   # but not more often then once in 30 seconds
+set check_new      # check for new messages
 set beep_new      # beep on new messages in the mailboxes
 
 set smtp_url="smtps://gregoire.juge@smtp.smile.fr:465/"
 
 set sort=threads
-# vim: filetype=muttrc
 
+# Signature
+set signature="~/.mutt/.signature""
+
+# vim: filetype=muttrc
 #
 #
 # make sure that you are using mutt linked against slang, not ncurses, or
