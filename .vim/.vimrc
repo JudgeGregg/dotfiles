@@ -2,6 +2,7 @@
 set nocompatible
 "Use pathogen to easily modify the runtime path to include all
 "plugins under the ~/.vim/bundle directory
+runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 call pathogen#helptags()
 "Automatically detect filetype and set plugins
