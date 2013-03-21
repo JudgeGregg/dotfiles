@@ -1,13 +1,9 @@
-"Toggle NERDTree
-map <F9> <Esc>:NERDTreeToggle<CR>
 "Toggle Tag list
-map <F8> <Esc>:TagbarToggle<CR>
-"Find function definition
+map <leader>t <Esc>:TagbarToggle<CR>
+"Open ipython
 map <leader>p <Esc>:!ipython<CR>
 "Open zsh shell
-map <leader>z <Esc>:!zsh<CR>
-"Task List
-map <leader>l <Plug>TaskList
+map <leader>z <Esc>:sh<CR>
 "Toggle GundoHistory
 map <leader>u <Esc>:GundoToggle<CR>
 "Search with Ack
@@ -23,9 +19,7 @@ map <leader>gc <Esc>:Gcommit<CR>
 " Open Errors windows
 map <leader>e <Esc>:Errors<CR>
 " Go to next tab
-nnoremap <leader><Tab> <Esc>:tabnext<CR>
-" Go to previous tab
-nnoremap <S-Tab> <Esc>:tabprevious<CR>
+nnoremap <Space> <Esc>:tabnext<CR>
 " Viewports shortkeys
 map <C-h> <Esc>:wincmd h<CR>
 map <C-j> <Esc>:wincmd j<CR>
@@ -38,4 +32,3 @@ noremap <leader>or <Esc>:python oerpRead(
 noremap <leader>ogf <Esc>:python oerpGetFields(
 noremap <leader>ogv <Esc>:python oerpGetView(
 noremap <leader>om <Esc>:python oerpCallMethod(
-
