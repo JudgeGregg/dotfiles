@@ -9,8 +9,7 @@ call pathogen#helptags()
 filetype plugin indent on
 "Syntax color on
 syntax on
-"Change the mapleader from \ to space
-"let mapleader="\<Space>"
+"Change the mapleader from \ to ,
 let mapleader=","
 "Use autoindent
 set autoindent
@@ -18,8 +17,10 @@ set autoindent
 set hidden
 "Use wildmenu completion
 set wildmenu
-"Always show line numbers
-set number        
+"Use wildmode completion
+set wildmode=longest:full
+"Always show relative line numbers
+set relativenumber
 "Set show matching parenthesis
 set showmatch     
 "Ignore case when searching
@@ -32,10 +33,6 @@ set smarttab
 set hlsearch      
 "Show search matches as you type
 set incsearch    
-"Read shortkeys
-execute 'source' . $HOME . '/.vim/shortkeys.vim'
-"Auto complete based on context
-let g:SuperTabDefaultCompletionType = "context"
 "Auto complete options
 set completeopt=menuone,longest,preview
 "Enable mouse
@@ -52,11 +49,13 @@ set title
 set noerrorbells        
 "Enable paste mode
 set pastetoggle=<F12>
+"Read shortkeys
+execute 'source' . $HOME . '/.vim/shortkeys.vim'
+"Auto complete based on context
+let g:SuperTabDefaultCompletionType = "context"
 "Set dark background
 set background=dark
 "Set colorscheme
-syntax enable
-let g:solarized_termtrans=1
 colorscheme solarized
 "Postgresql DB connection parameters
 let g:dbext_default_profile_PG='type=PGSQL:user=openerp:host=localhost'
