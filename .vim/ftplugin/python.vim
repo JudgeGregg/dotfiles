@@ -2,8 +2,8 @@
 set expandtab
 "Don't wrap lines
 set nowrap
-"Scrolloff 8 lignes
-set scrolloff=5
+"Scrolloff 3 lignes
+set scrolloff=3
 "A tab is four spaces
 set tabstop=4
 "Backspace removes indent, eol and start
