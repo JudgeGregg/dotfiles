@@ -1,7 +1,7 @@
 "Toggle Tag list
 map <leader>t <Esc>:TagbarToggle<CR>
 "Open ipython
-map <leader>p <Esc>:!ipython<CR>
+map <leader>p <Esc>:!bpython<CR>
 "Open zsh shell
 map <leader>z <Esc>:sh<CR>
 "Toggle GundoHistory
@@ -10,6 +10,10 @@ map <leader>u <Esc>:GundoToggle<CR>
 map <leader>a <Esc>:Ack 
 " Show Git status
 map <leader>gs <Esc>:Gstatus<CR>
+" Show Git read
+map <leader>gr <Esc>:Gread<CR>
+" Show Git write
+map <leader>gw <Esc>:Gwrite<CR>
 " Show Git diff
 map <leader>gd <Esc>:Gdiff<CR>
 " Show Git log
