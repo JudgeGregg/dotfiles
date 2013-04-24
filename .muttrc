@@ -2,15 +2,16 @@ set realname="Grégoire Juge"
 set from="gregoire.juge@smile.fr"
 set use_from=yes
 
-set editor=vimx
+set editor=vim
 
-set spoolfile="imaps://grjug@zimbra.smile.fr/INBOX"
+set folder="imaps://grjug@zimbra.smile.fr"
+set spoolfile="imaps://grjug@zimbra.smile.fr"
+set imap_check_subscribed
+mailboxes = =INBOX/Jenkins/Solucom
+mailboxes = =INBOX/Redmine/Solucom
 
-set folder="imaps://grjug@zimbra.smile.fr/"
-set record="=Sent"
-set postponed="=Drafts"
-#mailboxes = =INBOX/Jenkins/Solucom
-#mailboxes = =INBOX/Redmine/Solucom
+set record="+Sent"
+set postponed="+Drafts"
 
 set header_cache="/home/gregg/Mail"
 set message_cachedir="/home/gregg/Mail"
