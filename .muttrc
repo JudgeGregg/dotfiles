@@ -1,3 +1,5 @@
+set charset="utf-8"
+
 set realname="Grégoire Juge"
 set from="gregoire.juge@smile.fr"
 set use_from=yes
@@ -23,7 +25,7 @@ set mail_check=30  # mutt checks for new mails on every keystroke
 set check_new      # check for new messages
 set beep_new      # beep on new messages in the mailboxes
 
-set smtp_url="smtps://gregoire.juge@smtp.smile.fr:465/"
+set smtp_url="smtps://gregoire.juge@smtp.smile.fr"
 
 set sort=threads
 
