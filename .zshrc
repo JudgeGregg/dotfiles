@@ -35,6 +35,5 @@ source $ZSH/oh-my-zsh.sh
 
 
 # Customize to your needs...
-EDITOR=vim
 PAGER=less
 KEYTIMEOUT=1
