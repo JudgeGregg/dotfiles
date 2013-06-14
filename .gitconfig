@@ -1,9 +1,9 @@
 [user]
 	name = Grégoire Juge
-	email = gregoire.juge@smile.fr
+	email = gregoire.juge@gmail.com
 [help]
 	autocorrect = true
 [color]
 	ui = true
 [core]
-	editor = vimx
+	editor = vi
