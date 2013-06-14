@@ -30,7 +30,7 @@ map <C-j> <Esc>:wincmd j<CR>
 map <C-k> <Esc>:wincmd k<CR>
 map <C-l> <Esc>:wincmd l<CR>
 " Openerp shortkeys
-abbreviate spg self.pool.get
+abbreviate spg self.pool.get('
 noremap <leader>oc <Esc>:python oerpConnect(
 noremap <leader>or <Esc>:python oerpRead(
 noremap <leader>ogf <Esc>:python oerpGetFields(
