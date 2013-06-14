@@ -1,5 +1,3 @@
-"Not compatible with vi
-set nocompatible
 "Use pathogen to easily modify the runtime path to include all
 "plugins under the ~/.vim/bundle directory
 runtime bundle/vim-pathogen/autoload/pathogen.vim
@@ -18,7 +16,7 @@ set hidden
 "Use wildmenu completion
 set wildmenu
 "Use wildmode completion
-set wildmode=longest:full
+set wildmode=full
 "Always show relative line numbers
 set relativenumber
 "Set show matching parenthesis
@@ -58,9 +56,12 @@ set background=dark
 "Set colorscheme
 colorscheme solarized
 "Postgresql DB connection parameters
-let g:dbext_default_profile_PG='type=PGSQL:user=openerp:host=localhost'
+let g:dbext_default_profile_PG_local='type=DBI:driver=Pg:conn_parms=host=localhost;user=openerp;password=openerp;port=5432;database=@askb'
+let g:dbext_default_profile_PG_NG1='type=DBI:driver=Pg:conn_parms=host=localhost;user=openerp;password=openerp;port=5433;database=@askb'
+let g:dbext_default_profile_PG_NG2='type=DBI:driver=Pg:conn_parms=host=localhost;user=openerp;password=openerp;port=5434;database=@askb'
+let g:dbext_default_profile_PG_NG3='type=DBI:driver=Pg:conn_parms=host=localhost;user=openerp;password=openerp;port=5435;database=@askb'
 "Power line status line
-set rtp+=/home/gregg/.virtualenvs/Solucom/lib/python2.7/site-packages/powerline/bindings/vim
+set rtp+=/home/gregg/.local/lib/python2.7/site-packages/powerline/bindings/vim
 "Always show status line
 set laststatus=2
 "Remove mode display
