@@ -35,7 +35,7 @@ servers = (
     port = "0";
     use_ssl = "no";
     ssl_verify = "no";
-    autoconnect = "yes";
+    autoconnect = "no";
   },
   {
     address = "chat.facebook.com";
@@ -43,7 +43,7 @@ servers = (
     port = "0";
     use_ssl = "no";
     ssl_verify = "no";
-    autoconnect = "yes";
+    autoconnect = "no";
   },
   {
     address = "jabber.smile.fr";
@@ -51,7 +51,7 @@ servers = (
     port = "0";
     use_ssl = "no";
     ssl_verify = "no";
-    autoconnect = "yes";
+    autoconnect = "no";
   }
 );
 
@@ -127,8 +127,9 @@ chatnets = {
 channels = (
   { name = "#irssi"; chatnet = "ircnet"; autojoin = "No"; },
   { name = "silc"; chatnet = "silc"; autojoin = "No"; },
-  { name = "#openerp"; chatnet = "freenode"; autojoin = "Yes"; }
+  { name = "#openobject"; chatnet = "freenode"; autojoin = "Yes"; }
   { name = "#archlinux-arm"; chatnet = "freenode"; autojoin = "Yes"; }
+  { name = "#fabric"; chatnet = "freenode"; autojoin = "Yes"; }
 );
 
 aliases = {
@@ -313,7 +314,7 @@ settings = {
 ignores = (
   {
     level = "JOINS PARTS QUITS MODES";
-    channels = ( "#archlinux-arm", "#openerp" );
+    channels = ( "#archlinux-arm", "#openobject", "#fabric" );
   }
 );
 
