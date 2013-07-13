@@ -9,8 +9,6 @@ set editor=vim
 set folder="imaps://grjug@zimbra.smile.fr"
 set spoolfile="imaps://grjug@zimbra.smile.fr"
 set imap_check_subscribed
-mailboxes = =INBOX/Jenkins/Solucom
-mailboxes = =INBOX/Redmine/Solucom
 
 set record="+Sent"
 set postponed="+Drafts"
@@ -28,6 +26,8 @@ set beep_new      # beep on new messages in the mailboxes
 set smtp_url="smtps://gregoire.juge@smtp.smile.fr"
 
 set sort=threads
+
+set query_command="echo; ~/bin/mutt_ldap.py '%s'"
 
 # Signature
 set signature="~/.mutt/.signature""
