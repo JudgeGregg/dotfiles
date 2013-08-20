@@ -23,12 +23,12 @@ map <leader>gc <Esc>:Gcommit<CR>
 " Open Errors windows
 map <leader>e <Esc>:Errors<CR>
 " Go to next tab
-nnoremap <Space> <Esc>:tabnext<CR>
+nnoremap <Space> gt
 " Viewports shortkeys
-map <C-h> <Esc>:wincmd h<CR>
-map <C-j> <Esc>:wincmd j<CR>
-map <C-k> <Esc>:wincmd k<CR>
-map <C-l> <Esc>:wincmd l<CR>
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 " Openerp shortkeys
 abbreviate spg self.pool.get('
 noremap <leader>oc <Esc>:python oerpConnect(
