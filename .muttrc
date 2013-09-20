@@ -6,8 +6,8 @@ set use_from=yes
 
 set editor=vim
 
-set folder="imaps://grjug@zimbra.smile.fr"
-set spoolfile="imaps://grjug@zimbra.smile.fr"
+set folder="imaps://grjug@smile.fr@bluemind.smile.fr"
+set spoolfile="+INBOX"
 set imap_check_subscribed
 
 set record="+Sent"
@@ -23,11 +23,9 @@ set mail_check=30  # mutt checks for new mails on every keystroke
 set check_new      # check for new messages
 set beep_new      # beep on new messages in the mailboxes
 
-set smtp_url="smtps://gregoire.juge@smtp.smile.fr"
+set smtp_url="smtps://grjug@smile.fr@bluemind.smile.fr"
 
 set sort=threads
-
-set query_command="echo; ~/bin/mutt_ldap.py '%s'"
 
 # Signature
 set signature="~/.mutt/.signature""
