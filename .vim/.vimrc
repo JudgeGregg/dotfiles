@@ -55,10 +55,6 @@ let g:SuperTabDefaultCompletionType = "context"
 set background=dark
 "Set colorscheme
 colorscheme solarized
-"Postgresql DB connection parameters
-let g:dbext_default_profile_PG_local='type=DBI:driver=Pg:conn_parms=database=@askb'
-"Power line status line
-set rtp+=/home/gregg/.local/lib/python2.7/site-packages/powerline/bindings/vim
 "Always show status line
 set laststatus=2
 "Remove mode display
