@@ -1,7 +1,7 @@
 "Toggle Tag list
 map <leader>t <Esc>:TagbarToggle<CR>
 "Open ipython
-map <leader>p <Esc>:!bpython<CR>
+map <leader>p <Esc>:!python %<CR>
 "Open zsh shell
 map <leader>z <Esc>:sh<CR>
 "Toggle GundoHistory
