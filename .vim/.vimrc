@@ -53,9 +53,18 @@ execute 'source' . $HOME . '/.vim/shortkeys.vim'
 let g:SuperTabDefaultCompletionType = "context"
 "Set dark background
 set background=dark
+"Change default list symbols
+set listchars=tab:▸\ ,eol:¬
 "Set colorscheme
-colorscheme solarized
+colorscheme Tomorrow-Night-Eighties
 "Always show status line
 set laststatus=2
 "Remove mode display
 set noshowmode
+"Python powerline
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+let ackprg = 'ack-grep -H --nocolor --nogroup --column'""
+"Ultisnips directory
+let UltiSnipsSnippetsDir = '~/.vim/bundle/vim-snippets/UltiSnips/'
