@@ -22,17 +22,16 @@ map <leader>gl <Esc>:Glog<CR>
 map <leader>gc <Esc>:Gcommit<CR>
 " Open Errors windows
 map <leader>e <Esc>:Errors<CR>
+" Show list
+map <leader>l <Esc>:set list!<CR>
+" Clear Ctrl-P cache
+map <leader>c <Esc>:ClearCtrlPCache<CR>
 " Go to next tab
 nnoremap <Space> gt
+" Go to previous tab
+nnoremap <C-@> gT
 " Viewports shortkeys
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
-" Openerp shortkeys
-abbreviate spg self.pool.get('
-noremap <leader>oc <Esc>:python oerpConnect(
-noremap <leader>or <Esc>:python oerpRead(
-noremap <leader>ogf <Esc>:python oerpGetFields(
-noremap <leader>ogv <Esc>:python oerpGetView(
-noremap <leader>om <Esc>:python oerpCallMethod(
