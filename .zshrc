@@ -29,9 +29,10 @@ ZSH_THEME='blinks'
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(autojump fabric git tmux taskwarrior pip virtualenvwrapper vi-mode)
+plugins=(autojump git pip taskwarrior tmux vi-mode virtualenv virtualenvwrapper)
 
 source $ZSH/oh-my-zsh.sh
 
 
 # Customize to your needs...
+alias vi=vim

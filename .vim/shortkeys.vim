@@ -23,7 +23,7 @@ map <leader>gc <Esc>:Gcommit<CR>
 " Open Errors windows
 map <leader>e <Esc>:Errors<CR>
 " Go to next tab
-nnoremap <Space> <Esc>:tabnext<CR>
+nnoremap <Space> gt
 " Viewports shortkeys
 map <C-h> <Esc>:wincmd h<CR>
 map <C-j> <Esc>:wincmd j<CR>
