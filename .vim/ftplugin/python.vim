@@ -7,13 +7,15 @@ set scrolloff=3
 "A tab is four spaces
 set tabstop=4
 "Backspace removes indent, eol and start
-set backspace=indent,eol,start
+"set backspace=indent,eol,start
 "Copy the previous indentation on autoindenting
-set copyindent
+"set copyindent
 "Number of spaces to use for autoindenting
-set shiftwidth=4  
+set shiftwidth=4
+"A tab is four spaces
+set softtabstop=4
 "Use multiple of shiftwidth when indenting with '<' and '>'
-set shiftround    
+set smarttab
 "Lines max length
 set textwidth=79
 "Auto complete
