@@ -1,7 +1,7 @@
 "Toggle Tag list
 map <leader>t <Esc>:TagbarToggle<CR>
 "Open ipython
-map <leader>p <Esc>:!bpython<CR>
+map <leader>p <Esc>:!python %<CR>
 "Open zsh shell
 map <leader>z <Esc>:sh<CR>
 "Toggle GundoHistory
@@ -31,7 +31,7 @@ nnoremap <Space> gt
 " Go to previous tab
 nnoremap <C-@> gT
 " Viewports shortkeys
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+map <C-h> <Esc>:wincmd h<CR>
+map <C-j> <Esc>:wincmd j<CR>
+map <C-k> <Esc>:wincmd k<CR>
+map <C-l> <Esc>:wincmd l<CR>
