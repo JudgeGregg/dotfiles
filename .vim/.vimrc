@@ -56,7 +56,7 @@ set background=dark
 "Change default list symbols
 set listchars=tab:▸\ ,eol:¬
 "Set colorscheme
-colorscheme Tomorrow-Night-Eighties
+colorscheme mustang
 "Always show status line
 set laststatus=2
 "Remove mode display
