@@ -1,0 +1,123 @@
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.autohint:   true
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
+Xft.lcdfilter:lcddefault
+
+! Fix Letter Space
+URxvt.letterSpace: -1
+
+! Bell
+URxvt.urgentOnBell: True
+
+! Fonts
+!URxvt*font: xft:Inconsolata for Powerline
+!URxvt*imFont: xft:Inconsolata for Powerline
+!URxvt*italicFont: xft:Inconsolata for Powerline
+!URxvt*boldFont: xft:Inconsolata for Powerline
+!URxvt*boldItalicFont: xft:Inconsolata for Powerline
+
+!URxvt*font: xft:Droid Sans Mono for Powerline-15
+!URxvt*imFont: xft:Droid Sans Mono for Powerline-15
+!URxvt*italicFont: xft:Droid Sans Mono for Powerline-15
+!URxvt*boldFont: xft:Droid Sans Mono for Powerline-15
+!URxvt*boldItalicFont: xft:Droid Sans Mono for Powerline-15
+
+URxvt*font: xft:Meslo LG L DZ for Powerline-14
+URxvt*imFont: xft:Meslo LG L DZ for Powerline-14
+URxvt*italicFont: xft:Meslo LG L DZ for Powerline-14
+URxvt*boldFont: xft:Meslo LG L DZ for Powerline-14
+URxvt*boldItalicFont: xft:Meslo LG L DZ for Powerline-14
+
+! Buffer size
+URxvt*saveLines: 10000
+
+! No scroll bars
+URxvt*scrollBar: false
+
+! Scroll in tmux
+URxvt*secondaryScroll:  true
+
+! Url matcher
+URxvt.perl-ext-common: default,matcher 
+URxvt.url-launcher: /usr/bin/firefox
+URxvt.matcher.button: 1
+
+! Colors (Solarized)
+!URxvt*foreground: #839496
+!URxvt*background: #002b36
+!URxvt*color0: #073642
+!URxvt*color1: #dc322f
+!URxvt*color2: #859900
+!URxvt*color3: #b58900
+!URxvt*color4: #268bd2
+!URxvt*color5: #d33682
+!URxvt*color6: #2aa198
+!URxvt*color7: #eee8d5
+!URxvt*color8: #002b36
+!URxvt*color9: #cb4b16
+!URxvt*color10: #586e75
+!URxvt*color11: #657b83
+!URxvt*color12: #839496
+!URxvt*color13: #6c71c4
+!URxvt*color14: #93a1a1
+!URxvt*color15: #fdf6e3
+
+! Colors (Tomorrow Night Eighties)
+!#define t_comment #999999
+!#define t_red #f2777a
+!#define t_orange #f99157
+!#define t_yellow #ffcc66
+!#define t_green #99cc99
+!#define t_aqua #66cccc
+!#define t_blue #6699cc
+!#define t_purple #cc99cc
+!*.foreground: t_foreground
+!*.background: t_background
+!*.cursorColor: #aeafad
+!! Black / Grey
+!*.color0: #000000
+!*.color8: #666666
+!! Red / Bright Red
+!*.color1: t_red
+!*.color9: #FF3334
+!! Green + Bright Green
+!*.color2: t_green
+!*.color10: #9ec400
+!! Yellow (Orange) + Bright Yellow (Yellow)
+!*.color3: t_orange
+!*.color11: t_yellow
+!! Blue + Bright Blue
+!*.color4: t_blue
+!*.color12: t_blue
+!! Magenta (Purple) + Bright Magenta
+!*.color5: t_purple
+!*.color13: #b777e0
+!! Cyan (Aqua) + Bright Cyan
+!*.color6: t_aqua
+!*.color14: #54ced6
+!! Light Grey (Selection) + White (Current Line)
+!*.color7: t_selection
+!*.color15: t_current_line
+
+! Colors (Mustang)
+*background:#1a1a1a
+*foreground:#fff
+*color0:#000000
+*color1:#ff6565
+*color2:#93d44f
+*color3:#eab93d
+*color4:#204a87
+*color5:#ce5c00
+*color6:#89b6e2
+*color7:#cccccc
+*color8:#555753
+*color9:#ff8d8d
+*color10:#c8e7a8
+*color11:#ffc123
+*color12:#3465a4
+*color13:#f57900
+*color14:#46a4ff
+*color15:#ffffff
