@@ -55,6 +55,8 @@ let g:SuperTabDefaultCompletionType = "context"
 set background=dark
 "Change default list symbols
 set listchars=tab:▸\ ,eol:¬
+"Remove vertical fillchar
+set fillchars+=vert:\ 
 "Set colorscheme
 colorscheme mustang
 "Always show status line
@@ -65,6 +67,9 @@ set noshowmode
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
 python del powerline_setup
+"Ack program
 let ackprg = 'ack-grep -H --nocolor --nogroup --column'""
+"UltiSnips expand
+let g:UltiSnipsExpandTrigger = '<C-Space>'
 "Ultisnips directory
 let UltiSnipsSnippetsDir = '~/.vim/bundle/vim-snippets/UltiSnips/'

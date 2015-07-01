@@ -18,6 +18,8 @@ map <leader>gw <Esc>:Gwrite<CR>
 map <leader>gd <Esc>:Gdiff<CR>
 " Show Git log
 map <leader>gl <Esc>:Glog<CR>
+" Show Git global log
+map <leader>gg <Esc>:silent Git log --oneline --graph --decorate<CR>
 " Show Git commit
 map <leader>gc <Esc>:Gcommit<CR>
 " Open Errors windows
@@ -26,6 +28,8 @@ map <leader>e <Esc>:Errors<CR>
 map <leader>l <Esc>:set list!<CR>
 " Clear Ctrl-P cache
 map <leader>c <Esc>:ClearCtrlPCache<CR>
+" YouCompleteMe
+map <leader>jd <Esc>:YcmCompleter GoTo<CR>
 " Go to next tab
 nnoremap <Space> gt
 " Go to previous tab
