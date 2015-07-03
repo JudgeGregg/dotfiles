@@ -8,6 +8,8 @@ map <leader>z <Esc>:sh<CR>
 map <leader>u <Esc>:GundoToggle<CR>
 "Search with Ack
 map <leader>a <Esc>:Ack 
+"Clear and Redraw
+map <leader>r <Esc>:redraw!<CR>
 " Show Git status
 map <leader>gs <Esc>:Gstatus<CR>
 " Show Git read
@@ -16,6 +18,8 @@ map <leader>gr <Esc>:Gread<CR>
 map <leader>gw <Esc>:Gwrite<CR>
 " Show Git diff
 map <leader>gd <Esc>:Gdiff<CR>
+" Show Git vdiff
+map <leader>gv <Esc>:Gvdiff<CR>
 " Show Git log
 map <leader>gl <Esc>:Glog<CR>
 " Show Git global log
