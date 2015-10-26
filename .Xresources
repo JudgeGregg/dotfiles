@@ -25,11 +25,11 @@ URxvt.urgentOnBell: True
 !URxvt*boldFont: xft:Droid Sans Mono for Powerline-15
 !URxvt*boldItalicFont: xft:Droid Sans Mono for Powerline-15
 
-URxvt*font: xft:Meslo LG L DZ for Powerline-14
-URxvt*imFont: xft:Meslo LG L DZ for Powerline-14
-URxvt*italicFont: xft:Meslo LG L DZ for Powerline-14
-URxvt*boldFont: xft:Meslo LG L DZ for Powerline-14
-URxvt*boldItalicFont: xft:Meslo LG L DZ for Powerline-14
+URxvt*font: xft:Meslo LG L DZ for Powerline-11
+URxvt*imFont: xft:Meslo LG L DZ for Powerline-11
+URxvt*italicFont: xft:Meslo LG L DZ for Powerline-11
+URxvt*boldFont: xft:Meslo LG L DZ for Powerline-11
+URxvt*boldItalicFont: xft:Meslo LG L DZ for Powerline-11
 
 ! Buffer size
 URxvt*saveLines: 10000

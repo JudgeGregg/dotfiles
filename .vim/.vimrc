@@ -37,7 +37,7 @@ set completeopt=menuone,longest,preview
 set mouse=a
 "Remember more commands and search history
 set history=1000
-"Use many mort levels of undo
+"Use many more levels of undo
 set undolevels=1000
 "Ignore file extensions
 set wildignore=*.swp,*.pyc,*.svn,*.git
@@ -67,11 +67,19 @@ set noshowmode
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
 python del powerline_setup
-"Ack program
-let ackprg = 'ack-grep -H --nocolor --nogroup --column'""
+"Ack/Ag program
+let ackprg = 'ag --nocolor --nogroup --column'
+"Use ag in Ctrl-P (-g '' to match all files)
+let g:ctrlp_user_command="ag %s -l -g ''"
+"No cache for Ctrl-P
+let g:ctrlp_use_caching = 0
 "UltiSnips expand
 let g:UltiSnipsExpandTrigger = '<C-Space>'
 "Ultisnips directory
 let UltiSnipsSnippetsDir = '~/.vim/bundle/vim-snippets/UltiSnips/'
 "Add spaces to NERD Comments
 let NERDSpaceDelims = 1
+"Backup to .vim/backup
+set backupdir=~/.vim/backup
+"Swap files to .vim/backup
+set directory=~/.vim/backup
