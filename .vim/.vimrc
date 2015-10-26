@@ -73,3 +73,5 @@ let ackprg = 'ack-grep -H --nocolor --nogroup --column'""
 let g:UltiSnipsExpandTrigger = '<C-Space>'
 "Ultisnips directory
 let UltiSnipsSnippetsDir = '~/.vim/bundle/vim-snippets/UltiSnips/'
+"Add spaces to NERD Comments
+let NERDSpaceDelims = 1
