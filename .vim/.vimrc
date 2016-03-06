@@ -77,6 +77,8 @@ let g:ctrlp_use_caching = 0
 let g:UltiSnipsExpandTrigger = '<C-Space>'
 "Ultisnips directory
 let UltiSnipsSnippetsDir = '~/.vim/bundle/vim-snippets/UltiSnips/'
+"Add spaces to NERD Comments
+let NERDSpaceDelims = 1
 "Backup to .vim/backup
 set backupdir=~/.vim/backup
 "Swap files to .vim/backup
