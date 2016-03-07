@@ -6,6 +6,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/syntastic'
 Plug 'Valloric/YouCompleteMe'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'majutsushi/tagbar'
 Plug 'rking/ag.vim'
@@ -13,14 +14,21 @@ Plug 'sjl/gundo.vim'
 call plug#end()
 
 " VISUAL
-colorscheme mustang
-set fillchars+=vert:\
+set fillchars+=vert:\ 
 set listchars=tab:▸\ ,eol:¬
 let g:airline_powerline_fonts = 1
+let g:airline_theme = 'bubblegum'
+let g:airline#extensions#syntastic#enabled = 0
+colorscheme bubblegum
+set noshowmode
 
 " SHORTKEYS
 let mapleader=','
 let g:UltiSnipsExpandTrigger = '<C-Space>'
+let g:ctrlp_user_command="ag %s -l -g ''"
+let g:ctrlp_use_caching = 0
+let NERDSpaceDelims = 1
+nnoremap <leader>a <Esc>:Ag<CR>
 nnoremap <leader>t <Esc>:TagbarToggle<CR>
 nnoremap <leader>z <Esc>:te<CR>
 nnoremap <leader>r <Esc>:redraw!<CR>
@@ -37,7 +45,7 @@ nnoremap <leader>l <Esc>:set list!<CR>
 nnoremap <leader>jd <Esc>:YcmCompleter GoTo<CR>
 nnoremap <Space> gt
 nnoremap <C-@> gT
-nnoremap <C-j> <Esc>:wincmd j<CR>
-nnoremap <C-h> <Esc>:wincmd h<CR>
-nnoremap <C-k> <Esc>:wincmd k<CR>
-nnoremap <C-l> <Esc>:wincmd l<CR>
+nnoremap <C-j> <C-w>j
+nnoremap <C-h> <C-w>h
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
