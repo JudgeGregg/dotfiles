@@ -124,9 +124,9 @@ URxvt.matcher.button: 1
 
 !bubblegum colorscheme, based on bloom vim theme and xoria----------------------
 
-!black.normal     : bubblegum medgraylo
+!black.normal     : bubblegum medgrayhi
 !black.bright     : black.normal.rgb - 8
-URxvt.color0      : #3a3a3a
+URxvt.color0      : #444444
 URxvt.color8      : #0a0a0a
 
 !red.normal       : red.bright.r - 8
