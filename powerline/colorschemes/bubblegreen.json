@@ -8,7 +8,7 @@
 		"warning:regular":         { "fg": "solarized:base3", "bg": "solarized:red", "attrs": [] },
 		"critical:failure":        { "fg": "solarized:base3", "bg": "solarized:red", "attrs": [] },
 		"critical:success":        { "fg": "solarized:base3", "bg": "solarized:green", "attrs": [] },
-		"background":              { "fg": "solarized:base3", "bg": "bubble:medgreylo", "attrs": [] },
+		"background":              { "fg": "solarized:base3", "bg": "bubble:medgreyhi", "attrs": [] },
 		"background:divider":      { "fg": "bubble:green", "bg": "bubble:medgreyhi", "attrs": [] },
 		"user":                    { "fg": "solarized:base3", "bg": "solarized:blue", "attrs": ["bold"] },
 		"virtualenv":              { "fg": "solarized:base3", "bg": "solarized:green", "attrs": [] },
