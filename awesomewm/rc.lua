@@ -42,7 +42,7 @@ beautiful.init("/home/greg/.config/awesome/themes/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "urxvt"
-editor = os.getenv("EDITOR") or "vi"
+editor = os.getenv("EDITOR") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -261,7 +261,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
     -- Prompt
-    awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
+    -- awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
+    awful.key({ modkey },            "r",     function () awful.util.spawn("dmenu_run") end),
 
     awful.key({ modkey }, "x",
               function ()
@@ -271,7 +272,15 @@ globalkeys = awful.util.table.join(
                   awful.util.getdir("cache") .. "/history_eval")
               end),
     -- Menubar
-    awful.key({ modkey }, "p", function() menubar.show() end)
+    awful.key({ modkey }, "p", function() menubar.show() end),
+
+    -- My Keys
+    awful.key({ modkey }, "F11", function () awful.util.spawn('pactl -- set-sink-volume 1 -5%') end),
+    awful.key({ modkey }, "F10", function () awful.util.spawn('pactl -- set-sink-mute 1 toggle') end),
+    awful.key({ modkey }, "F12", function () awful.util.spawn('pactl -- set-sink-volume 1 +5%') end),
+    awful.key({ modkey }, "Print", function () awful.util.spawn("slock") end),
+    awful.key({ modkey }, "Scroll_Lock", function () awful.util.spawn("systemctl suspend") end),
+    awful.key({ modkey }, "Pause", function () awful.util.spawn("systemctl hibernate") end)
 )
 
 clientkeys = awful.util.table.join(
@@ -293,9 +302,6 @@ clientkeys = awful.util.table.join(
             c.maximized_vertical   = not c.maximized_vertical
         end)
 
-    --awful.key({}, "XF86AudioLowerVolume", function () awful.util.spawn_with_shell("amixer -c 0 set Master,0 unmute 5%-") end),
-    --awful.key({}, "XF86AudioMute", function () awful.util.spawn_with_shell("amixer -c 0 set Master,0 toggle") end),
-    --awful.key({}, "XF86AudioRaiseVolume", function () awful.util.spawn_with_shell("amixer -c 0 set Master,0 unmute 5%+") end)
 
 )
 
@@ -363,13 +369,15 @@ awful.rules.rules = {
                      focus = awful.client.focus.filter,
                      raise = true,
                      keys = clientkeys,
-		     size_hints_honor = false,
+                     size_hints_honor = false,
                      buttons = clientbuttons } },
     { rule = { class = "MPlayer" },
       properties = { floating = true } },
     { rule = { class = "pinentry" },
       properties = { floating = true } },
     { rule = { class = "gimp" },
+      properties = { floating = true } },
+    { rule = { instance = "dmenu_run" },
       properties = { floating = true } },
     -- Set Firefox to always map on tags number 2 of screen 1.
     -- { rule = { class = "Firefox" },
