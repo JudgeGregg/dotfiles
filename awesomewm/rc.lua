@@ -75,7 +75,7 @@ local layouts = {
 
 -- {{{ Tags
 tags = {
-    names = { "main", "aux", "chat", "jabber", "mail" },
+    names = { "ƀ", "Ƅ", "Ɓ", "ƒ", "Ɠ" },
     layout = { layouts[1], layouts[2], layouts[3], layouts[4], layouts[5] }
 }
 for s = 1, screen.count() do
