@@ -18,8 +18,12 @@ set fillchars+=vert:\
 set listchars=tab:▸\ ,eol:¬
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'bubblegum'
-let g:airline#extensions#syntastic#enabled = 0
-colorscheme bubblegum
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.maxlinenr = ''
+
+colorscheme bubblegum-256-dark
 set noshowmode
 
 " SHORTKEYS
