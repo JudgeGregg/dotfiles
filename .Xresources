@@ -6,24 +6,21 @@ Xft.hinting:    true
 Xft.hintstyle:  hintslight
 Xft.lcdfilter:lcddefault
 
-! Fix Letter Space
-URxvt.letterSpace: -1
-
 ! Bell
 URxvt.urgentOnBell: True
 
 ! Fonts
-!URxvt*font: xft:Inconsolata for Powerline
-!URxvt*imFont: xft:Inconsolata for Powerline
-!URxvt*italicFont: xft:Inconsolata for Powerline
-!URxvt*boldFont: xft:Inconsolata for Powerline
-!URxvt*boldItalicFont: xft:Inconsolata for Powerline
+! URxvt*font: xft:Inconsolata for Powerline
+! URxvt*imFont: xft:Inconsolata for Powerline
+! URxvt*italicFont: xft:Inconsolata for Powerline
+! URxvt*boldFont: xft:Inconsolata for Powerline
+! URxvt*boldItalicFont: xft:Inconsolata for Powerline
 
-!URxvt*font: xft:Droid Sans Mono for Powerline-15
-!URxvt*imFont: xft:Droid Sans Mono for Powerline-15
-!URxvt*italicFont: xft:Droid Sans Mono for Powerline-15
-!URxvt*boldFont: xft:Droid Sans Mono for Powerline-15
-!URxvt*boldItalicFont: xft:Droid Sans Mono for Powerline-15
+! URxvt*font: xft:Droid Sans Mono for Powerline-15
+! URxvt*imFont: xft:Droid Sans Mono for Powerline-15
+! URxvt*italicFont: xft:Droid Sans Mono for Powerline-15
+! URxvt*boldFont: xft:Droid Sans Mono for Powerline-15
+! URxvt*boldItalicFont: xft:Droid Sans Mono for Powerline-15
 
 ! URxvt*font: xft:Meslo LG L DZ for Powerline-11
 ! URxvt*imFont: xft:Meslo LG L DZ for Powerline-11
