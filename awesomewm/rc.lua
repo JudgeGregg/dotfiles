@@ -14,7 +14,6 @@ awful.rules     = require("awful.rules")
 local wibox     = require("wibox")
 local beautiful = require("beautiful")
 local naughty   = require("naughty")
-local drop      = require("scratchdrop")
 local lain      = require("lain")
 -- }}}
 
@@ -432,9 +431,6 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "r",      awesome.restart),
     awful.key({ modkey, "Shift"   }, "q",      awesome.quit),
 
-    -- Dropdown terminal
-    awful.key({ modkey,           }, "z",      function () drop(terminal) end),
-
     -- Widgets popups
     awful.key({ modkey,           }, "c",      function () lain.widgets.calendar:show(7) end),
     awful.key({ modkey,           }, "h",      function () fshomeupd.show(7) end),
@@ -457,9 +453,11 @@ globalkeys = awful.util.table.join(
                   awful.util.getdir("cache") .. "/history_eval")
               end),
     -- My Keys
-    awful.key({ modkey }, "F11", function () awful.util.spawn('pactl -- set-sink-volume 1 -5%') end),
-    awful.key({ modkey }, "F10", function () awful.util.spawn('pactl -- set-sink-mute 1 toggle') end),
-    awful.key({ modkey }, "F12", function () awful.util.spawn('pactl -- set-sink-volume 1 +5%') end),
+    awful.key({}, "F2", function () awful.util.spawn('amixer -- set Master toggle') end),
+    awful.key({}, "F3", function () awful.util.spawn('amixer -- set Master 10%-') end),
+    awful.key({}, "F4", function () awful.util.spawn('amixer -- set Master 10%+') end),
+    awful.key({}, "F5", function () awful.util.spawn('xbacklight -10') end),
+    awful.key({}, "F6", function () awful.util.spawn('xbacklight +10') end),
     awful.key({ modkey }, "Print", function () awful.util.spawn("slock") end),
     awful.key({ modkey }, "Scroll_Lock", function () awful.util.spawn("systemctl suspend") end),
     awful.key({ modkey }, "Pause", function () awful.util.spawn("systemctl hibernate") end)
