@@ -11,9 +11,12 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'majutsushi/tagbar'
 Plug 'rking/ag.vim'
 Plug 'sjl/gundo.vim'
+Plug 'fatih/vim-go'
+Plug 'therubymug/vim-pyte'
 call plug#end()
 
 " VISUAL
+set relativenumber
 set fillchars+=vert:\ 
 set listchars=tab:▸\ ,eol:¬
 let g:airline_powerline_fonts = 1
