@@ -453,11 +453,9 @@ globalkeys = awful.util.table.join(
                   awful.util.getdir("cache") .. "/history_eval")
               end),
     -- My Keys
-    awful.key({}, "F2", function () awful.util.spawn('amixer -- set Master toggle') end),
-    awful.key({}, "F3", function () awful.util.spawn('amixer -- set Master 10%-') end),
-    awful.key({}, "F4", function () awful.util.spawn('amixer -- set Master 10%+') end),
-    awful.key({}, "F5", function () awful.util.spawn('xbacklight -10') end),
-    awful.key({}, "F6", function () awful.util.spawn('xbacklight +10') end),
+    awful.key({}, "F10", function () awful.util.spawn('amixer -- set Master toggle') end),
+    awful.key({}, "F11", function () awful.util.spawn('amixer -- set Master 10%-') end),
+    awful.key({}, "F12", function () awful.util.spawn('amixer -- set Master 10%+') end),
     awful.key({ modkey }, "Print", function () awful.util.spawn("slock") end),
     awful.key({ modkey }, "Scroll_Lock", function () awful.util.spawn("systemctl suspend") end),
     awful.key({ modkey }, "Pause", function () awful.util.spawn("systemctl hibernate") end)
