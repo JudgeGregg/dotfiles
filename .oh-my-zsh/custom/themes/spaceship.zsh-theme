@@ -5,15 +5,15 @@
 # License: MIT
 # https://github.com/denysdovhan/spaceship-zsh-theme
 
-__PROMPT_SYMBOL="➔"
+__PROMPT_SYMBOL=">"
 __UNCOMMITTED="+"
 __UNSTAGED="!"
 __UNTRACKED="?"
 __STASHED="$"
 __UNPULLED="⇣"
 __UNPUSHED="⇡"
-__NVM_SYMBOL="⬢"
-__RUBY_SYMBOL="💎"
+__NVM_SYMBOL="Nvm"
+__RUBY_SYMBOL="Ruby"
 
 # Username.
 # If user is root, then pain it in red. Otherwise, just print in yellow.
@@ -179,7 +179,7 @@ __ruby_version() {
 
   echo -n " %Bvia%b "
   echo -n "%{$fg_bold[red]%}"
-  echo -n "${__RUBY_SYMBOL}  ${ruby_version}"
+  echo -n "${__RUBY_SYMBOL} ${ruby_version}"
   echo -n "%{$reset_color%}"
 }
 
