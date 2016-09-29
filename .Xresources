@@ -11,28 +11,18 @@ URxvt.urgentOnBell: True
 
 ! Fonts
 ! URxvt*font: xft:Inconsolata for Powerline
-! URxvt*imFont: xft:Inconsolata for Powerline
-! URxvt*italicFont: xft:Inconsolata for Powerline
-! URxvt*boldFont: xft:Inconsolata for Powerline
-! URxvt*boldItalicFont: xft:Inconsolata for Powerline
-
 ! URxvt*font: xft:Droid Sans Mono for Powerline-15
-! URxvt*imFont: xft:Droid Sans Mono for Powerline-15
-! URxvt*italicFont: xft:Droid Sans Mono for Powerline-15
-! URxvt*boldFont: xft:Droid Sans Mono for Powerline-15
-! URxvt*boldItalicFont: xft:Droid Sans Mono for Powerline-15
-
 ! URxvt*font: xft:Meslo LG L DZ for Powerline-11
-! URxvt*imFont: xft:Meslo LG L DZ for Powerline-11
-! URxvt*italicFont: xft:Meslo LG L DZ for Powerline-11
-! URxvt*boldFont: xft:Meslo LG L DZ for Powerline-11
-! URxvt*boldItalicFont: xft:Meslo LG L DZ for Powerline-11
 
-URxvt*font: -*-tamzenforpowerline-medium-*-*-*-20-*-*-*-*-*-*-*
-URxvt*imFont: -*-tamzenforpowerline-medium-*-*-*-20-*-*-*-*-*-*-*
-URxvt*italicFont: -*-tamzenforpowerline-medium-*-*-*-20-*-*-*-*-*-*-*
-URxvt*boldFont: -*-tamzenforpowerline-medium-*-*-*-20-*-*-*-*-*-*-*
-URxvt*boldItalicFont: -*-tamzenforpowerline-medium-*-*-*-20-*-*-*-*-*-*-*
+URxvt*font: -*-tamzenforpowerline-medium-*-*-*-20-*-*-*-*-*-*-*,xft:Noto Emoji
+URxvt*imFont:
+URxvt*italicFont:
+URxvt*boldFont:
+URxvt*boldItalicFont:
+
+URxvt*depth: 32
+URxvt*background: rgba:0000/0000/0200/c800
+URxvt*skipBuiltinGlyphs:    true
 
 ! Buffer size
 URxvt*saveLines: 10000
