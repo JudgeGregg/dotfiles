@@ -15,5 +15,7 @@ xrdb -merge .Xresources
 xset +fp ~/.local/share/fonts
 xset fp rehash
 urxvtd -q -f -o
-xss-lock slock &
-exec ssh-agent awesome
+xss-lock -- sxlock &
+compton -bc
+urxvtc &
+exec awesome
