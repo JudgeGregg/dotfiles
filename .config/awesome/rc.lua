@@ -102,133 +102,65 @@ red    = "#EB8F8F"
 green  = "#8FEB8F"
 
 -- Textclock
-mytextclock = awful.widget.textclock("<span font='Tamsyn 5'> </span>%H:%M ")
+mytextclock = awful.widget.textclock("<span font='Tamsyn 5'> </span>%H:%M ", 1)
 
 -- Calendar
 lain.widgets.calendar:attach(mytextclock)
 
---[[ Mail IMAP check
--- commented because it needs to be set before use
-mailwidget = lain.widgets.imap({
-    timeout  = 180,
-    server   = "server",
-    mail     = "mail",
-    password = "keyring get mail",
-    settings = function()
-        mail  = ""
-        count = ""
-
-        if mailcount > 0 then
-            mail = "<span font='Tamsyn 5'> </span>Mail "
-            count = mailcount .. " "
-        end
-
-        widget:set_markup(markup(blue, mail) .. count)
-    end
-})
-]]
-
--- MPD
-mpdicon = wibox.widget.imagebox(beautiful.play)
-mpdwidget = lain.widgets.mpd({
-    settings = function()
-        if mpd_now.state == "play" then
-            title = mpd_now.title
-            artist  = " - " .. mpd_now.artist  .. markup("#333333", " |<span font='Tamsyn 3'> </span>")
-            mpdicon:set_image(beautiful.play)
-        elseif mpd_now.state == "pause" then
-            title = "mpd "
-            artist  = "paused" .. markup("#333333", " |<span font='Tamsyn 3'> </span>")
-            mpdicon:set_image(beautiful.pause)
-        else
-            title  = ""
-            artist = ""
-            mpdicon:set_image()
-        end
-
-        widget:set_markup(markup(blue, title) .. artist)
-    end
-})
-
 -- Battery
-baticon = wibox.widget.imagebox(beautiful.bat)
-batbar = awful.widget.progressbar()
-batbar:set_color(beautiful.fg_normal)
-batbar:set_width(55)
-batbar:set_ticks(true)
-batbar:set_ticks_size(6)
-batbar:set_background_color(beautiful.bg_normal)
-batmargin = wibox.layout.margin(batbar, 2, 7)
-batmargin:set_top(6)
-batmargin:set_bottom(6)
-batupd = lain.widgets.bat({
-    settings = function()
-       if bat_now.perc == "N/A" or bat_now.status == "Not present" then
-            bat_perc = 100
-            baticon:set_image(beautiful.ac)
-        elseif bat_now.status == "Charging" then
-            bat_perc = tonumber(bat_now.perc)
-            baticon:set_image(beautiful.ac)
+-- baticon = wibox.widget.imagebox(beautiful.bat)
+-- batbar = awful.widget.progressbar()
+-- batbar:set_color(beautiful.fg_normal)
+-- batbar:set_width(55)
+-- batbar:set_ticks(true)
+-- batbar:set_ticks_size(6)
+-- batbar:set_background_color(beautiful.bg_normal)
+-- batmargin = wibox.layout.margin(batbar, 2, 7)
+-- batmargin:set_top(6)
+-- batmargin:set_bottom(6)
+-- batupd = lain.widgets.bat({
+    -- settings = function()
+       -- if bat_now.perc == "N/A" or bat_now.status == "Not present" then
+            -- bat_perc = 100
+            -- baticon:set_image(beautiful.ac)
+        -- elseif bat_now.status == "Charging" then
+            -- bat_perc = tonumber(bat_now.perc)
+            -- baticon:set_image(beautiful.ac)
 
-            if bat_perc >= 98 then
-                batbar:set_color(green)
-            elseif bat_perc > 50 then
-                batbar:set_color(beautiful.fg_normal)
-            elseif bat_perc > 15 then
-                batbar:set_color(beautiful.fg_normal)
-            else
-                batbar:set_color(red)
-            end
-        else
-            bat_perc = tonumber(bat_now.perc)
+            -- if bat_perc >= 98 then
+                -- batbar:set_color(green)
+            -- elseif bat_perc > 50 then
+                -- batbar:set_color(beautiful.fg_normal)
+            -- elseif bat_perc > 15 then
+                -- batbar:set_color(beautiful.fg_normal)
+            -- else
+                -- batbar:set_color(red)
+            -- end
+        -- else
+            -- bat_perc = tonumber(bat_now.perc)
 
-            if bat_perc >= 98 then
-                batbar:set_color(green)
-            elseif bat_perc > 50 then
-                batbar:set_color(beautiful.fg_normal)
-                baticon:set_image(beautiful.bat)
-            elseif bat_perc > 15 then
-                batbar:set_color(beautiful.fg_normal)
-                baticon:set_image(beautiful.bat_low)
-            else
-                batbar:set_color(red)
-                baticon:set_image(beautiful.bat_no)
-            end
-        end
-        batbar:set_value(bat_perc / 100)
-    end
-})
-batwidget = wibox.widget.background(batmargin)
-batwidget:set_bgimage(beautiful.widget_bg)
-
--- /home fs
-diskicon = wibox.widget.imagebox(beautiful.disk)
-diskbar = awful.widget.progressbar()
-diskbar:set_color(beautiful.fg_normal)
-diskbar:set_width(55)
-diskbar:set_ticks(true)
-diskbar:set_ticks_size(6)
-diskbar:set_background_color(beautiful.bg_normal)
-diskmargin = wibox.layout.margin(diskbar, 2, 7)
-diskmargin:set_top(6)
-diskmargin:set_bottom(6)
-fshomeupd = lain.widgets.fs({
-    partition = "/home",
-    settings  = function()
-        if fs_now.used < 90 then
-            diskbar:set_color(beautiful.fg_normal)
-        else
-            diskbar:set_color("#EB8F8F")
-        end
-        diskbar:set_value(fs_now.used / 100)
-    end
-})
-diskwidget = wibox.widget.background(diskmargin)
-diskwidget:set_bgimage(beautiful.widget_bg)
+            -- if bat_perc >= 98 then
+                -- batbar:set_color(green)
+            -- elseif bat_perc > 50 then
+                -- batbar:set_color(beautiful.fg_normal)
+                -- baticon:set_image(beautiful.bat)
+            -- elseif bat_perc > 15 then
+                -- batbar:set_color(beautiful.fg_normal)
+                -- baticon:set_image(beautiful.bat_low)
+            -- else
+                -- batbar:set_color(red)
+                -- baticon:set_image(beautiful.bat_no)
+            -- end
+        -- end
+        -- batbar:set_value(bat_perc / 100)
+    -- end
+-- })
+-- batwidget = wibox.widget.background(batmargin)
+-- batwidget:set_bgimage(beautiful.widget_bg)
 
 -- ALSA volume bar
 volicon = wibox.widget.imagebox(beautiful.vol)
-volume = lain.widgets.alsabar({width = 55, ticks = true, ticks_size = 6, step = "2%",
+volume = lain.widgets.alsabar({timeout = 0.1, width = 55, ticks = true, ticks_size = 6, step = "2%",
 settings = function()
     if volume_now.status == "off" then
         volicon:set_image(beautiful.vol_mute)
@@ -251,11 +183,6 @@ volmargin:set_top(6)
 volmargin:set_bottom(6)
 volumewidget = wibox.widget.background(volmargin)
 volumewidget:set_bgimage(beautiful.widget_bg)
-
--- Weather
-myweather = lain.widgets.weather({
-    city_id = 2988507 -- placeholder
-})
 
 -- Separators
 spr = wibox.widget.textbox(' ')
@@ -343,15 +270,6 @@ for s = 1, screen.count() do
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
     right_layout:add(small_spr)
-    right_layout:add(mpdicon)
-    right_layout:add(mpdwidget)
-    --right_layout:add(mailwidget)
-    -- right_layout:add(baticon)
-    -- right_layout:add(batwidget)
-    right_layout:add(bar_spr)
-    right_layout:add(diskicon)
-    right_layout:add(diskwidget)
-    right_layout:add(bar_spr)
     right_layout:add(volicon)
     right_layout:add(volumewidget)
     right_layout:add(bar_spr)
@@ -431,32 +349,16 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "r",      awesome.restart),
     awful.key({ modkey, "Shift"   }, "q",      awesome.quit),
 
-    -- Widgets popups
-    awful.key({ modkey,           }, "c",      function () lain.widgets.calendar:show(7) end),
-    awful.key({ modkey,           }, "h",      function () fshomeupd.show(7) end),
-    awful.key({ modkey,           }, "w",      function () myweather.show(7) end),
-
-
-    -- Copy to clipboard
-    awful.key({ modkey }, "c", function () os.execute("xsel -p -o | xsel -i -b") end),
-
 
     -- Prompt
     -- awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
     awful.key({ modkey },            "r",     function () awful.util.spawn("dmenu_run") end),
 
-    awful.key({ modkey }, "x",
-              function ()
-                  awful.prompt.run({ prompt = "Run Lua code: " },
-                  mypromptbox[mouse.screen].widget,
-                  awful.util.eval, nil,
-                  awful.util.getdir("cache") .. "/history_eval")
-              end),
     -- My Keys
     awful.key({}, "F10", function () awful.util.spawn('amixer -- set Master toggle') end),
-    awful.key({}, "F11", function () awful.util.spawn('amixer -- set Master 10%-') end),
-    awful.key({}, "F12", function () awful.util.spawn('amixer -- set Master 10%+') end),
-    awful.key({ modkey }, "Print", function () awful.util.spawn("slock") end),
+    awful.key({}, "F11", function () awful.util.spawn('amixer -- set Master 5%-') end),
+    awful.key({}, "F12", function () awful.util.spawn('amixer -- set Master 5%+') end),
+    awful.key({}, "Print", function () awful.util.spawn('sxlock') end),
     awful.key({ modkey }, "Scroll_Lock", function () awful.util.spawn("systemctl suspend") end),
     awful.key({ modkey }, "Pause", function () awful.util.spawn("systemctl hibernate") end)
 )
