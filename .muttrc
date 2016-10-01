@@ -2,6 +2,8 @@ set charset="utf-8"
 set use_from=yes
 set editor=nvim
 
+unset record
+
 set ssl_force_tls=yes
 set ssl_starttls=yes
 set ssl_use_sslv2=no
@@ -20,7 +22,7 @@ set crypt_autosign=yes
 set pgp_show_unusable=no
 set pgp_timeout=3600
 
-source "gpg -d ~/.mutt/settings.gpg |"
+source "gpg -dq ~/.mutt/settings.gpg |"
 # set realname=
 # set from=
 # set imap_pass=
@@ -33,7 +35,6 @@ source "gpg -d ~/.mutt/settings.gpg |"
 set spoolfile="+INBOX"
 set imap_check_subscribed
 
-set record="+Sent"
 set postponed="+Drafts"
 
 
