@@ -15,14 +15,15 @@ URxvt.urgentOnBell: True
 ! URxvt*font: xft:Meslo LG L DZ for Powerline-11
 
 URxvt*font: -*-tamzenforpowerline-medium-*-*-*-20-*-*-*-*-*-*-*,xft:Noto Emoji
+
+! Same fonts as above
 URxvt*imFont:
 URxvt*italicFont:
 URxvt*boldFont:
 URxvt*boldItalicFont:
 
-URxvt*depth: 32
-URxvt*background: rgba:0000/0000/0200/c800
-URxvt*skipBuiltinGlyphs:    true
+
+URxvt*skipBuiltinGlyphs: true
 
 ! Buffer size
 URxvt*saveLines: 10000
@@ -161,7 +162,9 @@ URxvt.color15     : #ffffff
 !background       : xoria256.Normal.guibg
 !cursor           : xoria256.Cursor.guibg
 URxvt.foreground  : #a8a8a8
-URxvt.background  : #262626
+URxvt*depth: 32
+URxvt*background: [90]black
+
 URxvt.cursorColor : #d787af
 
 !bold             : xoria256.Type.guifg
