@@ -16,6 +16,7 @@ Plug 'therubymug/vim-pyte'
 call plug#end()
 
 " VISUAL
+set termguicolors
 set relativenumber
 set fillchars+=vert:\ 
 set listchars=tab:▸\ ,eol:¬
