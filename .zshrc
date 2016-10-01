@@ -40,19 +40,22 @@ ZSH_THEME="spaceship"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(autojump git pip taskwarrior tmux virtualenv virtualenvwrapper vi-mode)
+plugins=(autojump git pip rbenv taskwarrior virtualenv virtualenvwrapper vi-mode)
 
 source $ZSH/oh-my-zsh.sh
-#export XDG_CONFIG_HOME="$HOME/.config"
-
+export XDG_CONFIG_HOME="$HOME/.config"
 
 # Customize to your needs...
 
-export NPM_PACKAGES="${HOME}/.npm-packages"
-export NODE_PATH="$NPM_PACKAGES/lib/node_modules:$NODE_PATH"
-export PATH="$NPM_PACKAGES/bin:$PATH"
-export MANPATH="$NPM_PACKAGES/share/man:$MANPATH"
 export EDITOR="nvim"
 
+# GPG
+GPG_TTY=$(tty)
+export GPG_TTY
+
+# Rbenv
+eval "$(rbenv init -)"
+
+# Aliases
 alias nv="nvim"
 alias shutdown='shutdown -h now'
