@@ -35,7 +35,6 @@ let mapleader=','
 let g:UltiSnipsExpandTrigger = '<C-Space>'
 let g:ctrlp_user_command="ag %s -l -g ''"
 let g:ctrlp_use_caching = 0
-let NERDSpaceDelims = 1
 nnoremap <leader>a <Esc>:Ag<CR>
 nnoremap <leader>t <Esc>:TagbarToggle<CR>
 nnoremap <leader>z <Esc>:te<CR>
