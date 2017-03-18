@@ -52,10 +52,10 @@ export EDITOR="nvim"
 # GPG
 GPG_TTY=$(tty)
 export GPG_TTY
+gpg-connect-agent updatestartuptty /bye >/dev/null
 
 # Rbenv
 eval "$(rbenv init -)"
 
 # Aliases
 alias nv="nvim"
-alias shutdown='shutdown -h now'
