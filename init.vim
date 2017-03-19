@@ -12,7 +12,6 @@ Plug 'majutsushi/tagbar'
 Plug 'rking/ag.vim'
 Plug 'sjl/gundo.vim'
 Plug 'fatih/vim-go'
-Plug 'therubymug/vim-pyte'
 call plug#end()
 
 " VISUAL
@@ -31,6 +30,9 @@ set noshowmode
 
 let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog = '/usr/bin/python3'
+
+" Eclim stuff
+let g:EclimCompletionMethod = 'omnifunc' 
 
 " SHORTKEYS
 let mapleader=','
