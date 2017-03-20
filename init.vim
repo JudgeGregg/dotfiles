@@ -35,7 +35,6 @@ let g:python3_host_prog = '/usr/bin/python3'
 let g:EclimCompletionMethod = 'omnifunc' 
 
 " SHORTKEYS
-let mapleader=','
 let g:UltiSnipsExpandTrigger = '<C-Space>'
 let g:ctrlp_user_command="ag %s -l -g ''"
 let g:ctrlp_use_caching = 0
@@ -55,7 +54,7 @@ nnoremap <leader>e <Esc>:Errors<CR>
 nnoremap <leader>l <Esc>:set list!<CR>
 nnoremap <leader>jd <Esc>:YcmCompleter GoTo<CR>
 nnoremap <Space> gt
-nnoremap <C-@> gT
+nmap <C-Space> <Nul>
 nnoremap <C-j> <C-w>j
 nnoremap <C-h> <C-w>h
 nnoremap <C-k> <C-w>k
