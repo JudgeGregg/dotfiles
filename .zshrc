@@ -57,5 +57,8 @@ gpg-connect-agent updatestartuptty /bye >/dev/null
 # Rbenv
 eval "$(rbenv init -)"
 
+# Cscope
+export CSCOPE_DB="$HOME/.cscope/cscope.out"
+
 # Aliases
 alias nv="nvim"

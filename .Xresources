@@ -14,7 +14,7 @@ URxvt.urgentOnBell: True
 ! URxvt*font: xft:Droid Sans Mono for Powerline-15
 ! URxvt*font: xft:Meslo LG L DZ for Powerline-11
 
-URxvt*font: -*-tamzenforpowerline-medium-*-*-*-20-*-*-*-*-*-*-*,xft:Noto Emoji
+URxvt*font: -*-tamzenforpowerline-medium-*-*-*-16-*-*-*-*-*-*-*
 
 ! Same fonts as above
 URxvt*imFont:

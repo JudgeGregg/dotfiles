@@ -28,20 +28,22 @@ let g:airline_symbols.maxlinenr = ''
 colorscheme bubblegum-256-dark
 set noshowmode
 
+" Python Neovim
 let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog = '/usr/bin/python3'
 
 " Eclim stuff
-let g:EclimCompletionMethod = 'omnifunc' 
+let g:EclimCompletionMethod = 'omnifunc'
+
+" Ctrl-P
+let g:ctrlp_user_command="ag %s -l -g ''"
+let g:ctrlp_use_caching = 0
 
 " SHORTKEYS
 let g:UltiSnipsExpandTrigger = '<C-Space>'
-let g:ctrlp_user_command="ag %s -l -g ''"
-let g:ctrlp_use_caching = 0
+map <Space> <leader>
 nnoremap <leader>a <Esc>:Ag<CR>
 nnoremap <leader>t <Esc>:TagbarToggle<CR>
-nnoremap <leader>z <Esc>:te<CR>
-nnoremap <leader>r <Esc>:redraw!<CR>
 nnoremap <leader>gs <Esc>:Gstatus<CR>
 nnoremap <leader>gr <Esc>:Gread<CR>
 nnoremap <leader>gw <Esc>:Gwrite<CR>
@@ -53,7 +55,9 @@ nnoremap <leader>gc <Esc>:Gcommit<CR>
 nnoremap <leader>e <Esc>:Errors<CR>
 nnoremap <leader>l <Esc>:set list!<CR>
 nnoremap <leader>jd <Esc>:YcmCompleter GoTo<CR>
-nnoremap <Space> gt
+nnoremap <leader>n gt
+nnoremap <leader>p gT
+"Weird hack for cscopes
 nmap <C-Space> <Nul>
 nnoremap <C-j> <C-w>j
 nnoremap <C-h> <C-w>h
