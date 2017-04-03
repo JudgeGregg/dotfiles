@@ -57,8 +57,11 @@ gpg-connect-agent updatestartuptty /bye >/dev/null
 # Rbenv
 eval "$(rbenv init -)"
 
-# Cscope
-export CSCOPE_DB="$HOME/.cscope/cscope.out"
+export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
 
 # Aliases
 alias nv="nvim"
+alias yu="yubioath-gui"
+alias t="nvr --remote-tab"
+alias s="nvr -o"
+alias v="nvr -O"
