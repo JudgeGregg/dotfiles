@@ -76,8 +76,8 @@ nnoremap <leader>gg <Esc>:silent Git log --oneline --graph --decorate<CR>
 nnoremap <leader>gc <Esc>:Gcommit<CR>
 nnoremap <leader>n gt
 nnoremap <leader>p gT
-nnoremap <C-L> gt
-nnoremap <C-H> gT
+nnoremap <M-l> gt
+nnoremap <M-h> gT
 nnoremap <leader>L <Esc>:set list!<CR>
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
