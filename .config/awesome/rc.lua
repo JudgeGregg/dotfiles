@@ -224,10 +224,10 @@ globalkeys = awful.util.table.join(
               {description = "go back", group = "tag"}),
 
     -- Non-empty tag browsing
-    awful.key({ altkey }, "Left", function () lain.util.tag_view_nonempty(-1) end,
-              {description = "view  previous nonempty", group = "tag"}),
-    awful.key({ altkey }, "Right", function () lain.util.tag_view_nonempty(1) end,
-              {description = "view  previous nonempty", group = "tag"}),
+    --awful.key({ altkey }, "Left", function () lain.util.tag_view_nonempty(-1) end,
+              --{description = "view  previous nonempty", group = "tag"}),
+    --awful.key({ altkey }, "Right", function () lain.util.tag_view_nonempty(1) end,
+              --{description = "view  previous nonempty", group = "tag"}),
 
     -- Default client focus
     awful.key({ altkey,           }, "j",
@@ -316,10 +316,10 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "q", awesome.quit,
               {description = "quit awesome", group = "awesome"}),
 
-    --awful.key({ altkey, "Shift"   }, "l",     function () awful.tag.incmwfact( 0.05)          end,
-              --{description = "increase master width factor", group = "layout"}),
-    --awful.key({ altkey, "Shift"   }, "h",     function () awful.tag.incmwfact(-0.05)          end,
-              --{description = "decrease master width factor", group = "layout"}),
+    awful.key({ altkey, "Shift"   }, "l",     function () awful.tag.incmwfact( 0.05)          end,
+	      {description = "increase master width factor", group = "layout"}),
+    awful.key({ altkey, "Shift"   }, "h",     function () awful.tag.incmwfact(-0.05)          end,
+	      {description = "decrease master width factor", group = "layout"}),
     awful.key({ modkey, "Shift"   }, "h",     function () awful.tag.incnmaster( 1, nil, true) end,
               {description = "increase the number of master clients", group = "layout"}),
     awful.key({ modkey, "Shift"   }, "l",     function () awful.tag.incnmaster(-1, nil, true) end,
@@ -353,66 +353,66 @@ globalkeys = awful.util.table.join(
     -- awful.key({ altkey, }, "w", function () if beautiful.weather then beautiful.weather.show(7) end end),
 
     -- ALSA volume control
-    awful.key({ altkey }, "Up",
-        function ()
-            os.execute(string.format("amixer -q set %s 1%%+", beautiful.volume.channel))
-            beautiful.volume.update()
-        end),
-    awful.key({ altkey }, "Down",
-        function ()
-            os.execute(string.format("amixer -q set %s 1%%-", beautiful.volume.channel))
-            beautiful.volume.update()
-        end),
-    awful.key({ altkey }, "m",
-        function ()
-            os.execute(string.format("amixer -q set %s toggle", beautiful.volume.togglechannel or beautiful.volume.channel))
-            beautiful.volume.update()
-        end),
-    awful.key({ altkey, "Control" }, "m",
-        function ()
-            os.execute(string.format("amixer -q set %s 100%%", beautiful.volume.channel))
-            beautiful.volume.update()
-        end),
+    --awful.key({ altkey }, "Up",
+        --function ()
+            --os.execute(string.format("amixer -q set %s 1%%+", beautiful.volume.channel))
+            --beautiful.volume.update()
+        --end),
+    --awful.key({ altkey }, "Down",
+        --function ()
+            --os.execute(string.format("amixer -q set %s 1%%-", beautiful.volume.channel))
+            --beautiful.volume.update()
+        --end),
+    --awful.key({ altkey }, "m",
+        --function ()
+            --os.execute(string.format("amixer -q set %s toggle", beautiful.volume.togglechannel or beautiful.volume.channel))
+            --beautiful.volume.update()
+        --end),
+    --awful.key({ altkey, "Control" }, "m",
+        --function ()
+            --os.execute(string.format("amixer -q set %s 100%%", beautiful.volume.channel))
+            --beautiful.volume.update()
+        --end),
 
-		awful.key({ altkey, "Control" }, "0",
-				function ()
-						os.execute(string.format("amixer -q set %s 0%%", beautiful.volume.channel))
-						beautiful.volume.update()
-				end),
+		--awful.key({ altkey, "Control" }, "0",
+				--function ()
+						--os.execute(string.format("amixer -q set %s 0%%", beautiful.volume.channel))
+						--beautiful.volume.update()
+				--end),
 
     -- MPD control
-    awful.key({ altkey, "Control" }, "Up",
-        function ()
-            awful.spawn.with_shell("mpc toggle")
-            beautiful.mpd.update()
-        end),
-    awful.key({ altkey, "Control" }, "Down",
-        function ()
-            awful.spawn.with_shell("mpc stop")
-            beautiful.mpd.update()
-        end),
-    awful.key({ altkey, "Control" }, "Left",
-        function ()
-            awful.spawn.with_shell("mpc prev")
-            beautiful.mpd.update()
-        end),
-    awful.key({ altkey, "Control" }, "Right",
-        function ()
-            awful.spawn.with_shell("mpc next")
-            beautiful.mpd.update()
-        end),
-    awful.key({ altkey }, "0",
-        function ()
-            local common = { text = "MPD widget ", position = "top_middle", timeout = 2 }
-            if beautiful.mpd.timer.started then
-                beautiful.mpd.timer:stop()
-                common.text = common.text .. lain.util.markup.bold("OFF")
-            else
-                beautiful.mpd.timer:start()
-                common.text = common.text .. lain.util.markup.bold("ON")
-            end
-            naughty.notify(common)
-        end),
+    --awful.key({ altkey, "Control" }, "Up",
+        --function ()
+            --awful.spawn.with_shell("mpc toggle")
+            --beautiful.mpd.update()
+        --end),
+    --awful.key({ altkey, "Control" }, "Down",
+        --function ()
+            --awful.spawn.with_shell("mpc stop")
+            --beautiful.mpd.update()
+        --end),
+    --awful.key({ altkey, "Control" }, "Left",
+        --function ()
+            --awful.spawn.with_shell("mpc prev")
+            --beautiful.mpd.update()
+        --end),
+    --awful.key({ altkey, "Control" }, "Right",
+        --function ()
+            --awful.spawn.with_shell("mpc next")
+            --beautiful.mpd.update()
+        --end),
+    --awful.key({ altkey }, "0",
+        --function ()
+            --local common = { text = "MPD widget ", position = "top_middle", timeout = 2 }
+            --if beautiful.mpd.timer.started then
+                --beautiful.mpd.timer:stop()
+                --common.text = common.text .. lain.util.markup.bold("OFF")
+            --else
+                --beautiful.mpd.timer:start()
+                --common.text = common.text .. lain.util.markup.bold("ON")
+            --end
+            --naughty.notify(common)
+        --end),
 
     -- Copy primary to clipboard (terminals to gtk)
     awful.key({ modkey }, "c", function () awful.spawn("xsel | xsel -i -b") end),
