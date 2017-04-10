@@ -74,8 +74,6 @@ nnoremap <leader>gv <Esc>:Gvdiff<CR>
 nnoremap <leader>gl <Esc>:Glog<CR>
 nnoremap <leader>gg <Esc>:silent Git log --oneline --graph --decorate<CR>
 nnoremap <leader>gc <Esc>:Gcommit<CR>
-nnoremap <leader>n gt
-nnoremap <leader>p gT
 nnoremap <M-l> gt
 nnoremap <M-h> gT
 nnoremap <leader>L <Esc>:set list!<CR>
