@@ -12,6 +12,7 @@ Plug 'majutsushi/tagbar'
 Plug 'rking/ag.vim'
 Plug 'fatih/vim-go'
 Plug 'rudes/vim-java'
+Plug 'vim-ruby/vim-ruby'
 Plug 'kassio/neoterm'
 Plug 'mhinz/neovim-remote'
 call plug#end()
