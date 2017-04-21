@@ -163,7 +163,7 @@ URxvt.color15     : #ffffff
 !cursor           : xoria256.Cursor.guibg
 URxvt.foreground  : #a8a8a8
 URxvt*depth: 32
-URxvt*background: [90]black
+URxvt*background: [50]black
 
 URxvt.cursorColor : #d787af
 

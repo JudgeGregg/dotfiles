@@ -450,11 +450,15 @@ globalkeys = awful.util.table.join(
               {description = "lua execute prompt", group = "awesome"}),
     --]]
     -- My Keys
-    awful.key({}, "F10", function () awful.util.spawn('amixer -- set Master toggle') end),
-    awful.key({}, "F11", function () awful.util.spawn('amixer -- set Master 5%-') end),
-    awful.key({}, "F12", function () awful.util.spawn('amixer -- set Master 5%+') end),
-    awful.key({}, "Print", function () awful.util.spawn('sxlock') end),
-    awful.key({ modkey }, "Pause", function () awful.util.spawn("systemctl hibernate") end)
+    awful.key({}, "F3", function () awful.util.spawn('amixer -- set Master toggle') end),
+    awful.key({}, "F6", function () awful.util.spawn('xbacklight -dec 10') end),
+    awful.key({}, "F7", function () awful.util.spawn('xbacklight -inc 10') end),
+    awful.key({}, "F8", function () awful.util.spawn('amixer -- set Master 5%-') end),
+    awful.key({}, "F9", function () awful.util.spawn('amixer -- set Master 5%+') end),
+    awful.key({}, "F10", function () awful.util.spawn('dbus-send  --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause') end),
+    awful.key({}, "F11", function () awful.util.spawn('dbus-send  --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous') end),
+    awful.key({}, "F12", function () awful.util.spawn('dbus-send  --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next') end),
+    awful.key({}, "End", function () awful.util.spawn('sxlock') end)
 )
 
 clientkeys = awful.util.table.join(
