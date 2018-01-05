@@ -45,8 +45,10 @@ set mail_check=600  # mutt checks for new mails on every keystroke
 set check_new      # check for new messages
 set beep_new      # beep on new messages in the mailboxes
 
+bind index G imap-fetch-mail
 
 set sort=threads
+
 
 # Signature
 set signature="~/.mutt/.signature""
