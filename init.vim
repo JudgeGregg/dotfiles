@@ -12,6 +12,7 @@ Plug 'majutsushi/tagbar'
 Plug 'rking/ag.vim'
 Plug 'fatih/vim-go'
 Plug 'rudes/vim-java'
+Plug 'vim-ruby/vim-ruby'
 Plug 'kassio/neoterm'
 Plug 'mhinz/neovim-remote'
 call plug#end()
@@ -74,8 +75,6 @@ nnoremap <leader>gv <Esc>:Gvdiff<CR>
 nnoremap <leader>gl <Esc>:Glog<CR>
 nnoremap <leader>gg <Esc>:silent Git log --oneline --graph --decorate<CR>
 nnoremap <leader>gc <Esc>:Gcommit<CR>
-nnoremap <leader>n gt
-nnoremap <leader>p gT
 nnoremap <M-l> gt
 nnoremap <M-h> gT
 nnoremap <leader>L <Esc>:set list!<CR>
