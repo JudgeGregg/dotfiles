@@ -51,4 +51,3 @@ export EDITOR="nvim"
 
 # Aliases
 alias vi="nvim"
-alias y="watch -n 5 'ykman oath code'"
