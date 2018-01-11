@@ -40,7 +40,7 @@ ZSH_THEME="spaceship"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(autojump git pip rbenv taskwarrior virtualenv virtualenvwrapper vi-mode)
+plugins=(autojump git pip taskwarrior virtualenv virtualenvwrapper vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -49,19 +49,6 @@ export XDG_CONFIG_HOME="$HOME/.config"
 
 export EDITOR="nvim"
 
-# GPG
-GPG_TTY=$(tty)
-export GPG_TTY
-gpg-connect-agent updatestartuptty /bye >/dev/null
-
-# Rbenv
-eval "$(rbenv init -)"
-
-export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
-
 # Aliases
-alias nv="nvim"
-alias yu="yubioath-gui"
-alias t="nvr --remote-tab"
-alias s="nvr -o"
-alias v="nvr -O"
+alias vi="nvim"
+alias y="watch -n 5 'ykman oath code'"
