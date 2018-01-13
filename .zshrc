@@ -51,3 +51,6 @@ export EDITOR="nvim"
 
 # Aliases
 alias vi="nvim"
+
+
+source "/home/greg/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
