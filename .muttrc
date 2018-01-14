@@ -53,7 +53,5 @@ set sort=threads
 # Signature
 set signature="~/.mutt/.signature""
 
-auto_view text/html
-
 color normal blue default
 color message cyan default
