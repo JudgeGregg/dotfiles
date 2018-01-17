@@ -503,8 +503,15 @@ globalkeys = awful.util.table.join(
                     history_path = awful.util.get_cache_dir() .. "/history_eval"
                   }
               end,
-              {description = "lua execute prompt", group = "awesome"})
+              {description = "lua execute prompt", group = "awesome"}),
     --]]
+    -- My Keys
+    awful.key({}, "F10", function () awful.util.spawn('amixer -- set Master toggle') end),
+    awful.key({}, "F11", function () awful.util.spawn('amixer -- set Master 5%-') end),
+    awful.key({}, "F12", function () awful.util.spawn('amixer -- set Master 5%+') end),
+    awful.key({}, "Print", function () awful.util.spawn('sxlock') end),
+    awful.key({ modkey }, "Pause", function () awful.util.spawn("systemctl hybrid-sleep") end)
+
 )
 
 clientkeys = awful.util.table.join(
