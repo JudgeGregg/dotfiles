@@ -4,7 +4,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'neomake/neomake'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdcommenter'
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
 Plug 'Valloric/ListToggle'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -14,6 +14,10 @@ Plug 'kassio/neoterm'
 Plug 'mhinz/neovim-remote'
 Plug 'pangloss/vim-javascript'
 Plug 'mhartington/oceanic-next'
+
+Plug 'zchee/deoplete-jedi'
+Plug 'Shougo/deoplete.nvim'
+Plug 'davidhalter/jedi-vim'
 call plug#end()
 
 
@@ -58,7 +62,10 @@ let g:ctrlp_user_command ="ag %s -l -g ''"
 let g:ctrlp_use_caching = 0
 
 " YouCompleteMe
-let g:ycm_server_python_interpreter = '/usr/bin/python2'
+" let g:ycm_server_python_interpreter = '/usr/bin/python2'
+
+" Jedi-Vim
+let g:jedi#completions_enabled = 0
 
 " SHORTKEYS
 map <Space> <leader>
