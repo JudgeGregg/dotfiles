@@ -4,7 +4,8 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'neomake/neomake'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdcommenter'
-" Plug 'Valloric/YouCompleteMe'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'Valloric/ListToggle'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -16,7 +17,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'mhartington/oceanic-next'
 
 Plug 'zchee/deoplete-jedi'
-Plug 'Shougo/deoplete.nvim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'davidhalter/jedi-vim'
 call plug#end()
 
@@ -25,6 +26,7 @@ call plug#end()
 set number
 set fillchars+=vert:\ 
 set listchars=tab:▸\ ,eol:¬
+set termguicolors
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'oceanicnext'
 colorscheme OceanicNext
@@ -61,8 +63,8 @@ autocmd! BufWritePost * Neomake
 let g:ctrlp_user_command ="ag %s -l -g ''"
 let g:ctrlp_use_caching = 0
 
-" YouCompleteMe
-" let g:ycm_server_python_interpreter = '/usr/bin/python2'
+" Deoplete
+let g:deoplete#enable_at_startup = 1
 
 " Jedi-Vim
 let g:jedi#completions_enabled = 0
