@@ -51,6 +51,8 @@ export EDITOR="nvim"
 
 # Aliases
 alias vi="nvim"
-
-
-source "/home/greg/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
+alias ta="task"
+alias o="nvr --remote-silent"
+alias t="nvr --remote-tab-silent"
+alias s="nvr -o"
+alias v="nvr -O"
