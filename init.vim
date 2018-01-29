@@ -15,12 +15,10 @@ Plug 'kassio/neoterm'
 Plug 'mhinz/neovim-remote'
 Plug 'pangloss/vim-javascript'
 Plug 'mhartington/oceanic-next'
-
 Plug 'zchee/deoplete-jedi'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'davidhalter/jedi-vim'
 call plug#end()
-
 
 " VISUAL
 set number
@@ -69,10 +67,14 @@ let g:deoplete#enable_at_startup = 1
 " Jedi-Vim
 let g:jedi#completions_enabled = 0
 
+" Neoterm
+let g:neoterm_automap_keys = "<leader>tt"
+
 " SHORTKEYS
 map <Space> <leader>
 nnoremap <leader>a <Esc>:Ag<CR>
-nnoremap <leader>t <Esc>:TagbarToggle<CR>
+nnoremap <leader>T <Esc>:TagbarToggle<CR>
+nnoremap <leader>L <Esc>:set list!<CR>
 nnoremap <leader>gs <Esc>:Gstatus<CR>
 nnoremap <leader>gr <Esc>:Gread<CR>
 nnoremap <leader>gw <Esc>:Gwrite<CR>
@@ -83,12 +85,17 @@ nnoremap <leader>gg <Esc>:silent Git log --oneline --graph --decorate<CR>
 nnoremap <leader>gc <Esc>:Gcommit<CR>
 nnoremap <M-l> gt
 nnoremap <M-h> gT
-nnoremap <leader>L <Esc>:set list!<CR>
+tnoremap <M-l> <C-\><C-N>gt
+tnoremap <M-h> <C-\><C-N>gT
+tnoremap <C-h> <C-\><C-N><C-w>h
+tnoremap <C-j> <C-\><C-N><C-w>j
+tnoremap <C-k> <C-\><C-N><C-w>k
+tnoremap <C-l> <C-\><C-N><C-w>l
+inoremap <C-h> <C-\><C-N><C-w>h
+inoremap <C-j> <C-\><C-N><C-w>j
+inoremap <C-k> <C-\><C-N><C-w>k
+inoremap <C-l> <C-\><C-N><C-w>l
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-tnoremap <C-h> <C-\><C-n><C-w>h
-tnoremap <C-j> <C-\><C-n><C-w>j
-tnoremap <C-k> <C-\><C-n><C-w>k
-tnoremap <C-l> <C-\><C-n><C-w>l
