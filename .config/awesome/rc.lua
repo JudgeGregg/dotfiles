@@ -80,7 +80,7 @@ local editor       = os.getenv("EDITOR") or "nano"
 local gui_editor   = "gvim"
 local browser      = "firefox"
 local guieditor    = "atom"
-local scrlocker    = "xlock"
+local scrlocker    = "slock"
 
 awful.util.terminal = terminal
 awful.util.tagnames = { "1", "2", "3", "4", "5", "6", "7", "8" }
@@ -92,7 +92,7 @@ awful.layout.layouts = {
     awful.layout.suit.tile.top,
     awful.layout.suit.fair,
     awful.layout.suit.fair.horizontal,
-    awful.layout.suit.spiral,
+    --awful.layout.suit.spiral,
     --awful.layout.suit.spiral.dwindle,
     --awful.layout.suit.max,
     --awful.layout.suit.max.fullscreen,
@@ -384,15 +384,15 @@ globalkeys = awful.util.table.join(
     --awful.key({ altkey, }, "c", function () lain.widget.calendar.show(7) end,
               --{description = "show calendar", group = "widgets"}),
     --awful.key({ altkey, }, "h", function () if beautiful.fs then beautiful.fs.show(7) end end,
-              --{description = "show filesystem", group = "widgets"}),
-    awful.key({ altkey, }, "w", function () if beautiful.weather then beautiful.weather.show(7) end end,
-              {description = "show weather", group = "widgets"}),
+           --{description = "show filesystem", group = "widgets"}),
+    --awful.key({ altkey, }, "w", function () if beautiful.weather then beautiful.weather.show(7) end end,
+              --{description = "show weather", group = "widgets"}),
 
     -- Brightness
-    awful.key({ }, "XF86MonBrightnessUp", function () awful.util.spawn("xbacklight -inc 10") end,
-              {description = "+10%", group = "hotkeys"}),
-    awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec 10") end,
-              {description = "-10%", group = "hotkeys"}),
+    --awful.key({ }, "XF86MonBrightnessUp", function () awful.util.spawn("xbacklight -inc 10") end,
+              --{description = "+10%", group = "hotkeys"}),
+    --awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn("xbacklight -dec 10") end,
+              --{description = "-10%", group = "hotkeys"}),
 
     -- ALSA volume control
     awful.key({ altkey }, "Up",
@@ -427,43 +427,43 @@ globalkeys = awful.util.table.join(
         {description = "volume 0%", group = "hotkeys"}),
 
     -- MPD control
-    awful.key({ altkey, "Control" }, "Up",
-        function ()
-            awful.spawn.with_shell("mpc toggle")
-            beautiful.mpd.update()
-        end,
-        {description = "mpc toggle", group = "widgets"}),
-    awful.key({ altkey, "Control" }, "Down",
-        function ()
-            awful.spawn.with_shell("mpc stop")
-            beautiful.mpd.update()
-        end,
-        {description = "mpc stop", group = "widgets"}),
-    awful.key({ altkey, "Control" }, "Left",
-        function ()
-            awful.spawn.with_shell("mpc prev")
-            beautiful.mpd.update()
-        end,
-        {description = "mpc prev", group = "widgets"}),
-    awful.key({ altkey, "Control" }, "Right",
-        function ()
-            awful.spawn.with_shell("mpc next")
-            beautiful.mpd.update()
-        end,
-        {description = "mpc next", group = "widgets"}),
-    awful.key({ altkey }, "0",
-        function ()
-            local common = { text = "MPD widget ", position = "top_middle", timeout = 2 }
-            if beautiful.mpd.timer.started then
-                beautiful.mpd.timer:stop()
-                common.text = common.text .. lain.util.markup.bold("OFF")
-            else
-                beautiful.mpd.timer:start()
-                common.text = common.text .. lain.util.markup.bold("ON")
-            end
-            naughty.notify(common)
-        end,
-        {description = "mpc on/off", group = "widgets"}),
+    --awful.key({ altkey, "Control" }, "Up",
+        --function ()
+            --awful.spawn.with_shell("mpc toggle")
+            --beautiful.mpd.update()
+        --end,
+        --{description = "mpc toggle", group = "widgets"}),
+    --awful.key({ altkey, "Control" }, "Down",
+        --function ()
+            --awful.spawn.with_shell("mpc stop")
+            --beautiful.mpd.update()
+        --end,
+        --{description = "mpc stop", group = "widgets"}),
+    --awful.key({ altkey, "Control" }, "Left",
+        --function ()
+            --awful.spawn.with_shell("mpc prev")
+            --beautiful.mpd.update()
+        --end,
+        --{description = "mpc prev", group = "widgets"}),
+    --awful.key({ altkey, "Control" }, "Right",
+        --function ()
+            --awful.spawn.with_shell("mpc next")
+            --beautiful.mpd.update()
+        --end,
+        --{description = "mpc next", group = "widgets"}),
+    --awful.key({ altkey }, "0",
+        --function ()
+            --local common = { text = "MPD widget ", position = "top_middle", timeout = 2 }
+            --if beautiful.mpd.timer.started then
+                --beautiful.mpd.timer:stop()
+                --common.text = common.text .. lain.util.markup.bold("OFF")
+            --else
+                --beautiful.mpd.timer:start()
+                --common.text = common.text .. lain.util.markup.bold("ON")
+            --end
+            --naughty.notify(common)
+        --end,
+        --{description = "mpc on/off", group = "widgets"}),
 
     -- Copy primary to clipboard (terminals to gtk)
     awful.key({ modkey }, "c", function () awful.spawn("xsel | xsel -i -b") end,
@@ -473,10 +473,10 @@ globalkeys = awful.util.table.join(
               {description = "copy gtk to terminal", group = "hotkeys"}),
 
     -- User programs
-    awful.key({ modkey }, "q", function () awful.spawn(browser) end,
-              {description = "run browser", group = "launcher"}),
-    awful.key({ modkey }, "a", function () awful.spawn(guieditor) end,
-              {description = "run gui editor", group = "launcher"}),
+    --awful.key({ modkey }, "q", function () awful.spawn(browser) end,
+              --{description = "run browser", group = "launcher"}),
+    --awful.key({ modkey }, "a", function () awful.spawn(guieditor) end,
+              --{description = "run gui editor", group = "launcher"}),
 
     -- Default
     --[[ Menubar
