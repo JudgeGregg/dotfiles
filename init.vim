@@ -70,6 +70,9 @@ let g:jedi#completions_enabled = 0
 " Neoterm
 let g:neoterm_automap_keys = "<leader>tt"
 
+" Insert mode when entering terminals
+au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+
 " SHORTKEYS
 map <Space> <leader>
 nnoremap <leader>a <Esc>:Ag<CR>
