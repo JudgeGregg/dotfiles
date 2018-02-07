@@ -4,7 +4,7 @@ Xft.rgba:       rgb
 Xft.autohint:   false
 Xft.hinting:    true
 Xft.hintstyle:  hintslight
-Xft.lcdfilter:lcddefault
+Xft.lcdfilter:	lcddefault
 
 ! Bell
 URxvt.urgentOnBell: True
@@ -15,7 +15,6 @@ URxvt*font: xft:Source Code Pro:size=10,xft:Noto Color Emoji:size=10
 ! URxvt*font: xft:Noto Mono for Powerline:size=9
 ! URxvt*font: xft:Droid Sans Mono for Powerline-15
 ! URxvt*font: xft:Meslo LG L DZ for Powerline-11
-! URxvt*font: -*-tamzenforpowerline-medium-*-*-*-16-*-*-*-*-*-*-*
 
 ! Same fonts as above
 URxvt*imFont:
@@ -23,6 +22,7 @@ URxvt*italicFont:
 URxvt*boldFont:
 URxvt*boldItalicFont:
  
+! Always use font glyphs
 URxvt*skipBuiltinGlyphs: true
 
 ! Buffer size
