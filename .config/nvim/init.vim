@@ -22,7 +22,6 @@ call plug#end()
 
 " VISUAL
 set number
-set fillchars+=vert:\ 
 set listchars=tab:▸\ ,eol:¬
 set termguicolors
 let g:airline_powerline_fonts = 1
@@ -67,9 +66,6 @@ let g:deoplete#enable_at_startup = 1
 " Jedi-Vim
 let g:jedi#completions_enabled = 0
 
-" Neoterm
-let g:neoterm_automap_keys = "<leader>tt"
-
 " Insert mode when entering terminals
 au BufEnter * if &buftype == 'terminal' | :startinsert | endif
 
@@ -86,6 +82,8 @@ nnoremap <leader>gv <Esc>:Gvdiff<CR>
 nnoremap <leader>gl <Esc>:Glog<CR>
 nnoremap <leader>gg <Esc>:silent Git log --oneline --graph --decorate<CR>
 nnoremap <leader>gc <Esc>:Gcommit<CR>
+nnoremap <leader>tt <Esc>:Ttoggle<CR>
+nnoremap <leader>tn <Esc>:Tnew<CR>
 nnoremap <M-l> gt
 nnoremap <M-h> gT
 tnoremap <M-l> <C-\><C-N>gt
@@ -94,6 +92,7 @@ tnoremap <C-h> <C-\><C-N><C-w>h
 tnoremap <C-j> <C-\><C-N><C-w>j
 tnoremap <C-k> <C-\><C-N><C-w>k
 tnoremap <C-l> <C-\><C-N><C-w>l
+tnoremap <C-s> <C-\><C-N>
 inoremap <C-h> <C-\><C-N><C-w>h
 inoremap <C-j> <C-\><C-N><C-w>j
 inoremap <C-k> <C-\><C-N><C-w>k
