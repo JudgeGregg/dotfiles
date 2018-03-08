@@ -35,7 +35,7 @@ URxvt*scrollBar: false
 URxvt*secondaryScroll:  true
 
 ! Url matcher
-URxvt.perl-ext-common: default,matcher
+URxvt.perl-ext-common: default,resize-font,matcher
 URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.button: 1
 
