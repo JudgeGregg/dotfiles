@@ -21,7 +21,7 @@ URxvt*imFont:
 URxvt*italicFont:
 URxvt*boldFont:
 URxvt*boldItalicFont:
- 
+
 ! Always use font glyphs
 URxvt*skipBuiltinGlyphs: true
 
