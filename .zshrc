@@ -59,7 +59,7 @@ ZSH_THEME="spaceship"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  autojump bzr git pip systemd taskwarrior vi-mode
+  autojump git pip systemd taskwarrior vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -93,7 +93,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export EDITOR='vi'
+export EDITOR='nvim'
 export PAGER='less'
 export XDG_CONFIG='$HOME/.config'
 alias vi="nvim"
@@ -102,5 +102,4 @@ alias o="nvr --remote-silent"
 alias t="nvr --remote-tab-silent"
 alias s="nvr -o"
 alias v="nvr -O"
-alias b="bzr"
 alias startx2='startx -- -keeptty -nolisten tcp > $HOME/.xorg.log 2>&1'
