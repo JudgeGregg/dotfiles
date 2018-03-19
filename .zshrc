@@ -95,6 +95,7 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR='vi'
 export PAGER='less'
+export XDG_CONFIG='$HOME/.config'
 alias vi="nvim"
 alias ta="task"
 alias o="nvr --remote-silent"
