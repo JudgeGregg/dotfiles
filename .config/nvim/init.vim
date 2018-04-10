@@ -50,8 +50,8 @@ let g:terminal_color_15 = '#ffffff'
 set backspace=indent,eol,start
 
 " Python Neovim
-let g:python_host_prog = '/usr/bin/python2'
-let g:python3_host_prog = '/usr/bin/python3'
+let g:python_host_prog = '/home/greg/.pyenv/versions/neovim2/bin/python'
+let g:python3_host_prog = '/home/greg/.pyenv/versions/neovim3/bin/python'
 
 " Neomake
 autocmd! BufWritePost * Neomake
