@@ -553,7 +553,6 @@ globalkeys = my_table.join(
     awful.key({}, "F12", function () awful.util.spawn('amixer -- set Master 5%+') end),
     awful.key({}, "Print", function () awful.util.spawn('sxlock') end),
     awful.key({ modkey }, "Pause", function () awful.util.spawn("systemctl hibernate") end)
-
 )
 
 clientkeys = my_table.join(
