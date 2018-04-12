@@ -506,15 +506,9 @@ globalkeys = awful.util.table.join(
               {description = "lua execute prompt", group = "awesome"}),
     --]]
     -- My Keys
-    awful.key({}, "F5", function () awful.util.spawn('playerctl play-pause') end),
-    awful.key({}, "F7", function () awful.util.spawn('playerctl previous') end),
-    awful.key({}, "F8", function () awful.util.spawn('playerctl next') end),
-    awful.key({}, "F10", function () awful.util.spawn('amixer -- set Master toggle') end),
-    awful.key({}, "F11", function () awful.util.spawn('amixer -- set Master 5%-') end),
-    awful.key({}, "F12", function () awful.util.spawn('amixer -- set Master 5%+') end),
-    awful.key({}, "Print", function () awful.util.spawn('sxlock') end),
-    awful.key({ modkey }, "Pause", function () awful.util.spawn("systemctl hybrid-sleep") end)
-
+    awful.key({}, "F11", function () awful.util.spawn('playerctl play-pause') end),
+    awful.key({}, "F10", function () awful.util.spawn('playerctl previous') end),
+    awful.key({}, "F12", function () awful.util.spawn('playerctl next') end)
 )
 
 clientkeys = awful.util.table.join(

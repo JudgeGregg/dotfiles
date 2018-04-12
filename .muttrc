@@ -2,8 +2,6 @@ set charset="utf-8"
 set use_from=yes
 set editor=nvim
 
-unset record
-
 set ssl_force_tls=yes
 set ssl_starttls=yes
 set ssl_use_sslv2=no
@@ -13,6 +11,7 @@ set ssl_use_tlsv1_1=no
 set ssl_use_tlsv1_2=yes
 set ssl_verify_dates=yes
 set ssl_verify_host=yes
+set certificate_file=~/.mutt/certs
 
 set crypt_use_gpgme=yes
 set crypt_replyencrypt=yes
@@ -28,27 +27,32 @@ source "gpg -dq ~/.mutt/settings.gpg |"
 # set imap_pass=
 # set imap_user=
 # set folder=
-# set smtp_url=
-# set header_cache=
-# set message_cachedir=
+set folder="imap://imap.assemblee-nationale.fr"
+set record="+Sent Items"
+set postponed="+Drafts"
+
+set header_cache = ~/.mutt/header_cache
+set message_cachedir = ~/.mutt/message_cache
+
+set mailcap_path = '~/.mutt/mailcap'
+auto_view text/html                                      # view html automatically
+alternative_order text/plain text/enriched text/html     # save html for last
 
 set spoolfile="+INBOX"
 set imap_check_subscribed
 
-set postponed="+Drafts"
-
-
-set timeout=60    # mutt 'presses' (like) a key for you (while you're idle) 
+set timeout=60    # mutt 'presses' (like) a key for you (while you're idle)
                   # each x sec to trigger the thing below
 set mail_check=600  # mutt checks for new mails on every keystroke
                   # but not more often then once in 600 seconds
 set check_new      # check for new messages
 set beep_new      # beep on new messages in the mailboxes
-
 bind index G imap-fetch-mail
 
-set sort=threads
+set query_command="lda -m '%s'"
+bind editor <Tab> complete-query
 
+set sort=threads
 
 # Signature
 set signature="~/.mutt/.signature""

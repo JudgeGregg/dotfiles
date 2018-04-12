@@ -13,5 +13,5 @@ autocutsel -selection PRIMARY -fork &
 setxkbmap us -option caps:escape -option compose:ralt
 xrdb -merge .Xresources
 urxvtd -q -f -o
-compton -bc
+compton -b
 exec awesome
