@@ -59,3 +59,4 @@ set signature="~/.mutt/.signature""
 
 color normal blue default
 color message cyan default
+alias ssi.secretariat SSI Secrétariat <ssi.secretariat@assemblee-nationale.fr>
