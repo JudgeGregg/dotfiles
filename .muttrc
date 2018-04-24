@@ -58,3 +58,4 @@ set sort=threads
 set signature="~/.mutt/.signature""
 
 source ~/.mutt/dracula.muttrc
+alias ssi.secretariat SSI Secrétariat <ssi.secretariat@assemblee-nationale.fr>
