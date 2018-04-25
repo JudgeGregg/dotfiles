@@ -508,7 +508,11 @@ globalkeys = awful.util.table.join(
     -- My Keys
     awful.key({}, "F11", function () awful.util.spawn('playerctl play-pause') end),
     awful.key({}, "F10", function () awful.util.spawn('playerctl previous') end),
-    awful.key({}, "F12", function () awful.util.spawn('playerctl next') end)
+    awful.key({}, "F12", function () awful.util.spawn('playerctl next') end),
+    awful.key({}, "XF86AudioMute", function () awful.util.spawn('amixer set Master toggle') end),
+    awful.key({}, "XF86AudioLowerVolume", function () awful.util.spawn('amixer set Master 5%-') end),
+    awful.key({}, "XF86AudioRaiseVolume", function () awful.util.spawn('amixer set Master 5%+') end),
+    awful.key({ modkey }, "Prior", function () awful.util.spawn('systemctl suspend') end)
 )
 
 clientkeys = awful.util.table.join(
