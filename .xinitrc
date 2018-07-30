@@ -14,4 +14,5 @@ setxkbmap us -option caps:escape -option compose:ralt
 xrdb -merge .Xresources
 urxvtd -q -f -o
 compton -b
+xss-lock -- slock &
 exec awesome
