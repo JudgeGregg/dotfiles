@@ -106,5 +106,6 @@ alias s="nvr -o"
 alias v="nvr -O"
 alias startx2='startx -- -keeptty -nolisten tcp > $HOME/.xorg.log 2>&1'
 export LOIX_ROOT=$HOME/Projects/loix.buildout
-export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=gasp -Dswing.aatext=true'
+export JAVA_FONTS=/usr/share/fonts/TTF
 alias oxy="$HOME/oxygen/Oxygen\ XML\ Editor\ 18/oxygen.sh"

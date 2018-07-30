@@ -53,9 +53,14 @@ set query_command="lda -m '%s'"
 bind editor <Tab> complete-query
 
 set sort=threads
+set sort_aux=last-date-received
 
 # Signature
 set signature="~/.mutt/.signature""
 
 source ~/.mutt/dracula.muttrc
-alias ssi.secretariat SSI Secrétariat <ssi.secretariat@assemblee-nationale.fr>
+
+alias secretariat SSI Secrétariat <ssi.secretariat@assemblee-nationale.fr>
+alias sgbd SGBD <ssi.prod.sgbd@assemblee-nationale.fr>
+
+set hostname="assemblee-nationale.fr"
