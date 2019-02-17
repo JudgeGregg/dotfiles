@@ -1,4 +1,4 @@
-Xft.dpi:        92x91
+Xft.dpi:        96x96
 Xft.antialias:  true
 Xft.rgba:       rgb
 Xft.autohint:   false
@@ -10,7 +10,7 @@ Xft.lcdfilter:	lcddefault
 URxvt.urgentOnBell: True
 
 ! Fonts
-URxvt*font: xft:Source Code Pro:size=12
+URxvt*font: xft:Source Code Pro:size=12,xft:Noto Color Emoji:pixelsize=8
 ! URxvt*font: xft:Inconsolata for Powerline
 ! URxvt*font: xft:Noto Mono for Powerline:size=9
 ! URxvt*font: xft:Droid Sans Mono for Powerline-15
