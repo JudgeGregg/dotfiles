@@ -95,7 +95,9 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR='nvim'
 export PAGER='less'
-export XDG_CONFIG='$HOME/.config'
+export XDG_CONFIG=$HOME'/.config'
+export GOPATH=$HOME'/Projets/Go'
+export PATH=$PATH:$GOPATH'/bin'
 alias vi="nvim"
 alias ta="task"
 alias o="nvr --remote-silent"
