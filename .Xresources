@@ -1,4 +1,4 @@
-Xft.dpi:        118
+Xft.dpi:        120
 Xft.antialias:  true
 Xft.rgba:       rgb
 Xft.autohint:   false
@@ -10,11 +10,13 @@ Xft.lcdfilter:	lcddefault
 URxvt.urgentOnBell: True
 
 ! Fonts
-URxvt*font: xft:Source Code Pro:size=11
-! URxvt*font: xft:Inconsolata for Powerline
-! URxvt*font: xft:Noto Mono for Powerline:size=9
-! URxvt*font: xft:Droid Sans Mono for Powerline-15
-! URxvt*font: xft:Meslo LG L DZ for Powerline-11
+URxvt*font: xft:Source Code Pro:style=Regular:size=11
+!URxvt*font: xft:Source Code Pro:size=15
+!URxvt*font: xft:Inconsolata for Powerline
+!URxvt*font: xft:Noto Mono for Powerline:size=9
+!URxvt*font: xft:Droid Sans Mono for Powerline-15
+!URxvt*font: xft:monospace
+!URxvt*font: xft:Meslo LG L DZ for Powerline-11
 
 ! Same fonts as above
 URxvt*imFont:
