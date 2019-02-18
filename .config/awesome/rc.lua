@@ -259,7 +259,7 @@ globalkeys = my_table.join(
               {description = "take a screenshot", group = "hotkeys"}),
 
     -- X screen locker
-    awful.key({ }, "End", function () os.execute(scrlocker) end,
+    awful.key({ }, "Print", function () os.execute(scrlocker) end,
               {description = "lock screen", group = "hotkeys"}),
 
     -- Hotkeys
@@ -545,14 +545,13 @@ globalkeys = my_table.join(
               {description = "lua execute prompt", group = "awesome"}),
     --]]
     -- My Keys
-    awful.key({}, "F5", function () awful.util.spawn('playerctl play-pause') end),
-    awful.key({}, "F7", function () awful.util.spawn('playerctl previous') end),
+    awful.key({}, "F7", function () awful.util.spawn('playerctl play-pause') end),
+    awful.key({}, "F6", function () awful.util.spawn('playerctl previous') end),
     awful.key({}, "F8", function () awful.util.spawn('playerctl next') end),
-    awful.key({}, "F10", function () awful.util.spawn('amixer -- set Master toggle') end),
-    awful.key({}, "F11", function () awful.util.spawn('amixer -- set Master 5%-') end),
-    awful.key({}, "F12", function () awful.util.spawn('amixer -- set Master 5%+') end),
-    awful.key({}, "Print", function () awful.util.spawn('sxlock') end),
-    awful.key({ modkey }, "Pause", function () awful.util.spawn("systemctl hibernate") end)
+    awful.key({}, "F4", function () awful.util.spawn('amixer set Master toggle') end),
+    awful.key({}, "F2", function () awful.util.spawn('amixer set Master 5%-') end),
+    awful.key({}, "F3", function () awful.util.spawn('amixer set Master 5%+') end),
+    awful.key({ modkey }, "Pause", function () awful.util.spawn('systemctl suspend') end)
 )
 
 clientkeys = my_table.join(
