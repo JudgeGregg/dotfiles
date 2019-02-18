@@ -75,7 +75,7 @@ local themes = {
 local chosen_theme = themes[2]
 local modkey       = "Mod4"
 local altkey       = "Mod1"
-local terminal     = "urxvtc"
+local terminal     = "kitty"
 local editor       = os.getenv("EDITOR") or "nano"
 local gui_editor   = "gvim"
 local browser      = "firefox"
@@ -229,7 +229,7 @@ globalkeys = awful.util.table.join(
               {description = "take a screenshot", group = "hotkeys"}),
 
     -- X screen locker
-    awful.key({ }, "End", function () os.execute(scrlocker) end,
+    awful.key({ }, "Print", function () os.execute(scrlocker) end,
               {description = "lock screen", group = "hotkeys"}),
 
     -- Hotkeys
@@ -506,13 +506,13 @@ globalkeys = awful.util.table.join(
               {description = "lua execute prompt", group = "awesome"}),
     --]]
     -- My Keys
-    awful.key({}, "F11", function () awful.util.spawn('playerctl play-pause') end),
-    awful.key({}, "F10", function () awful.util.spawn('playerctl previous') end),
-    awful.key({}, "F12", function () awful.util.spawn('playerctl next') end),
-    awful.key({}, "XF86AudioMute", function () awful.util.spawn('amixer set Master toggle') end),
-    awful.key({}, "XF86AudioLowerVolume", function () awful.util.spawn('amixer set Master 5%-') end),
-    awful.key({}, "XF86AudioRaiseVolume", function () awful.util.spawn('amixer set Master 5%+') end),
-    awful.key({ modkey }, "Prior", function () awful.util.spawn('systemctl suspend') end)
+    awful.key({}, "F7", function () awful.util.spawn('playerctl play-pause') end),
+    awful.key({}, "F6", function () awful.util.spawn('playerctl previous') end),
+    awful.key({}, "F8", function () awful.util.spawn('playerctl next') end),
+    awful.key({}, "F4", function () awful.util.spawn('amixer set Master toggle') end),
+    awful.key({}, "F2", function () awful.util.spawn('amixer set Master 5%-') end),
+    awful.key({}, "F3", function () awful.util.spawn('amixer set Master 5%+') end),
+    awful.key({ modkey }, "Pause", function () awful.util.spawn('systemctl suspend') end)
 )
 
 clientkeys = awful.util.table.join(
