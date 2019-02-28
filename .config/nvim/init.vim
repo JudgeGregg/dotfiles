@@ -18,6 +18,7 @@ Plug 'mhartington/oceanic-next'
 Plug 'zchee/deoplete-jedi'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'davidhalter/jedi-vim'
+Plug 'fatih/vim-go'
 call plug#end()
 
 " VISUAL
@@ -46,6 +47,9 @@ let g:terminal_color_13 = '#8787d7'
 let g:terminal_color_14 = '#87afff'
 let g:terminal_color_15 = '#ffffff'
 
+" Set transparent background
+hi! Normal ctermbg=NONE guibg=NONE
+
 " Copy the previous indentation on autoindenting
 set backspace=indent,eol,start
 
@@ -66,7 +70,12 @@ let g:deoplete#enable_at_startup = 1
 " Jedi-Vim
 let g:jedi#completions_enabled = 0
 
-" Insert mode when entering terminals
+" Neoterm
+" Switch to new term in insert mode
+let g:neoterm_autoinsert = 1
+let g:neoterm_default_mod = 'tab'
+
+" Switch to insert mode when entering terminal
 au BufEnter * if &buftype == 'terminal' | :startinsert | endif
 
 " SHORTKEYS
