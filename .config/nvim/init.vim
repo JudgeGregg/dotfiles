@@ -18,6 +18,7 @@ Plug 'mhartington/oceanic-next'
 Plug 'zchee/deoplete-jedi'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'davidhalter/jedi-vim'
+Plug 'fatih/vim-go'
 call plug#end()
 
 " VISUAL
