@@ -7,12 +7,11 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'Valloric/ListToggle'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'arcticicestudio/nord-vim'
+Plug 'itchyny/lightline.vim'
 Plug 'majutsushi/tagbar'
 Plug 'rking/ag.vim'
 Plug 'kassio/neoterm'
-Plug 'mhinz/neovim-remote'
 Plug 'pangloss/vim-javascript'
 Plug 'mhartington/oceanic-next'
 Plug 'zchee/deoplete-jedi'
@@ -25,9 +24,10 @@ call plug#end()
 set number
 set listchars=tab:▸\ ,eol:¬
 set termguicolors
-let g:airline_powerline_fonts = 1
-let g:airline_theme = 'oceanicnext'
-colorscheme OceanicNext
+let g:lightline = {
+      \ 'colorscheme': 'nord',
+      \ }
+colorscheme nord
 set noshowmode
 
 let g:terminal_color_0  = '#303030'
@@ -58,7 +58,8 @@ let g:python_host_prog = '/home/greg/.pyenv/versions/neovim2/bin/python'
 let g:python3_host_prog = '/home/greg/.pyenv/versions/neovim3/bin/python'
 
 " Neomake
-autocmd! BufWritePost * Neomake
+" When writing a buffer (no delay).
+call neomake#configure#automake('w')
 
 " Ctrl-P
 let g:ctrlp_user_command ="ag %s -l -g ''"
@@ -73,7 +74,7 @@ let g:jedi#completions_enabled = 0
 " Neoterm
 " Switch to new term in insert mode
 let g:neoterm_autoinsert = 1
-let g:neoterm_default_mod = 'tab'
+let g:neoterm_default_mod = 'botright'
 
 " Switch to insert mode when entering terminal
 au BufEnter * if &buftype == 'terminal' | :startinsert | endif
