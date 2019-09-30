@@ -104,4 +104,3 @@ alias o="nvr --remote-silent"
 alias t="nvr --remote-tab-silent"
 alias s="nvr -o"
 alias v="nvr -O"
-alias startx2='startx -- -keeptty -nolisten tcp > $HOME/.xorg.log 2>&1'
