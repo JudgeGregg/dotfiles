@@ -53,5 +53,4 @@ set sort=threads
 # Signature
 set signature="~/.mutt/.signature""
 
-color normal white default
-color message cyan default
+source ~/.mutt/dracula.muttrc
