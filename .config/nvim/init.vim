@@ -13,11 +13,11 @@ Plug 'majutsushi/tagbar'
 Plug 'rking/ag.vim'
 Plug 'kassio/neoterm'
 Plug 'pangloss/vim-javascript'
-Plug 'mhartington/oceanic-next'
 Plug 'zchee/deoplete-jedi'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'davidhalter/jedi-vim'
 Plug 'fatih/vim-go'
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 " VISUAL
