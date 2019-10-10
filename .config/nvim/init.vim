@@ -54,8 +54,8 @@ hi! Normal ctermbg=NONE guibg=NONE
 set backspace=indent,eol,start
 
 " Python Neovim
-let g:python_host_prog = '/home/greg/.pyenv/versions/neovim2/bin/python'
-let g:python3_host_prog = '/home/greg/.pyenv/versions/neovim3/bin/python'
+let g:python_host_prog = '/usr/bin/python'
+let g:python3_host_prog = '/usr/bin/python3'
 
 " Neomake
 " When writing a buffer (no delay).
