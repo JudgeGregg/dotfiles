@@ -7,46 +7,31 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'Valloric/ListToggle'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 Plug 'majutsushi/tagbar'
 Plug 'rking/ag.vim'
 Plug 'kassio/neoterm'
-Plug 'mhinz/neovim-remote'
 Plug 'pangloss/vim-javascript'
-Plug 'mhartington/oceanic-next'
 Plug 'zchee/deoplete-jedi'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'davidhalter/jedi-vim'
 Plug 'fatih/vim-go'
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 " VISUAL
 set number
 set listchars=tab:▸\ ,eol:¬
 set termguicolors
-let g:airline_powerline_fonts = 1
-let g:airline_theme = 'oceanicnext'
-colorscheme OceanicNext
+let g:lightline = {
+      \ 'colorscheme': 'nord',
+      \ }
+colorscheme nord
 set noshowmode
 
-let g:terminal_color_0  = '#303030'
-let g:terminal_color_1  = '#d75f5f'
-let g:terminal_color_2  = '#00af87'
-let g:terminal_color_3  = '#afd75f'
-let g:terminal_color_4  = '#5fafd7'
-let g:terminal_color_5  = '#8787af'
-let g:terminal_color_6  = '#00afd7'
-let g:terminal_color_7  = '#ffffff'
-let g:terminal_color_8  = '#a3a3a3'
-let g:terminal_color_9  = '#d787af'
-let g:terminal_color_10 = '#5faf5f'
-let g:terminal_color_11 = '#d7af5f'
-let g:terminal_color_12 = '#87afd7'
-let g:terminal_color_13 = '#8787d7'
-let g:terminal_color_14 = '#87afff'
-let g:terminal_color_15 = '#ffffff'
-
+" Set transparent background
+hi! Normal ctermbg=NONE guibg=NONE
+"
 " Copy the previous indentation on autoindenting
 set backspace=indent,eol,start
 
@@ -55,7 +40,7 @@ let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_prog = '/usr/bin/python3'
 
 " Neomake
-autocmd! BufWritePost * Neomake
+call neomake#configure#automake('w')
 
 " Ctrl-P
 let g:ctrlp_user_command ="ag %s -l -g ''"
@@ -67,7 +52,12 @@ let g:deoplete#enable_at_startup = 1
 " Jedi-Vim
 let g:jedi#completions_enabled = 0
 
-" Insert mode when entering terminals
+" Neoterm
+" Switch to new term in insert mode
+let g:neoterm_autoinsert = 1
+let g:neoterm_default_mod = 'belowright'
+
+" Switch to insert mode when entering terminal
 au BufEnter * if &buftype == 'terminal' | :startinsert | endif
 
 " SHORTKEYS

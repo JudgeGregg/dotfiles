@@ -58,9 +58,11 @@ set sort_aux=last-date-received
 # Signature
 set signature="~/.mutt/.signature""
 
-color normal white default
-color message cyan default
 alias secretariat SSI Secrétariat <ssi.secretariat@assemblee-nationale.fr>
 alias sgbd SGBD <ssi.prod.sgbd@assemblee-nationale.fr>
+alias mco MCO <mco@assemblee-nationale.fr>
 
 set hostname="assemblee-nationale.fr"
+
+# Theme
+source ~/.mutt/dracula.muttrc

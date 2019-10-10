@@ -105,7 +105,7 @@ alias t="nvr --remote-tab-silent"
 alias s="nvr -o"
 alias v="nvr -O"
 alias startx2='startx -- -keeptty -nolisten tcp > $HOME/.xorg.log 2>&1'
-export LOIX_ROOT=$HOME/Projects/loix.buildout
-export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=gasp -Dswing.aatext=true'
+export LOIX_ROOT=$HOME/Projects/Python/loix
+export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd -Dswing.aatext=true'
 export JAVA_FONTS=/usr/share/fonts/TTF
 alias oxy="$HOME/oxygen/Oxygen\ XML\ Editor\ 18/oxygen.sh"
