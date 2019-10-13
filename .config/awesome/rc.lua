@@ -51,13 +51,13 @@ end
 -- {{{ Autostart windowless processes
 
 -- This function will run once every time Awesome is started
-local function run_once(cmd_arr)
-    for _, cmd in ipairs(cmd_arr) do
-        awful.spawn.with_shell(string.format("pgrep -u $USER -fx '%s' > /dev/null || (%s)", cmd, cmd))
-    end
-end
-
-run_once({ "unclutter -root" }) -- entries must be comma-separated
+--local function run_once(cmd_arr)
+    --for _, cmd in ipairs(cmd_arr) do
+        --awful.spawn.with_shell(string.format("pgrep -u $USER -fx '%s' > /dev/null || (%s)", cmd, cmd))
+    --end
+--end
+--
+awful.spawn.with_shell("~/.config/awesome/autorun.sh")
 
 -- This function implements the XDG autostart specification
 --[[
