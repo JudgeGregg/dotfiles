@@ -4,20 +4,16 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'neomake/neomake'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdcommenter'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'Valloric/ListToggle'
 Plug 'arcticicestudio/nord-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'majutsushi/tagbar'
 Plug 'rking/ag.vim'
 Plug 'kassio/neoterm'
-Plug 'pangloss/vim-javascript'
 Plug 'zchee/deoplete-jedi'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'davidhalter/jedi-vim'
-Plug 'fatih/vim-go'
-Plug 'arcticicestudio/nord-vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'psf/black', { 'branch': 'stable' }
 call plug#end()
 
 " VISUAL
@@ -30,6 +26,9 @@ let g:lightline = {
 colorscheme nord
 set noshowmode
 
+" No swap file
+noswap
+
 " Set transparent background
 hi! Normal ctermbg=NONE guibg=NONE
 
@@ -37,8 +36,8 @@ hi! Normal ctermbg=NONE guibg=NONE
 set backspace=indent,eol,start
 
 " Python Neovim
-let g:python_host_prog = '/usr/bin/python'
-let g:python3_host_prog = '/usr/bin/python3'
+let g:python_host_prog = '/opt/pyenv/versions/neovim2/bin/python2'
+let g:python3_host_prog = '/opt/pyenv/versions/neovim/bin/python'
 
 " Neomake
 " When writing a buffer (no delay).
@@ -53,6 +52,9 @@ let g:deoplete#enable_at_startup = 1
 
 " Jedi-Vim
 let g:jedi#completions_enabled = 0
+
+" NerdCommenter use // in C files
+let g:NERDAltDelims_c = 1
 
 " Neoterm
 " Switch to new term in insert mode
@@ -94,3 +96,25 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+" Custom maker for RISC-V
+let g:neomake_c_riscvgcc_maker = {
+    \ 'exe': 'riscv64-unknown-elf-gcc',
+    \ 'args': ['-fsyntax-only', '-Wall', '-Wextra', '-Ifreedom-metal', '-Ibsp/sifive-hifive1-revb/install/include'],
+    \ 'errorformat':
+            \ '%-G%f:%s:,' .
+            \ '%-G%f:%l: %#error: %#(Each undeclared identifier is reported only%.%#,' .
+            \ '%-G%f:%l: %#error: %#for each function it appears%.%#,' .
+            \ '%-GIn file included%.%#,' .
+            \ '%-G %#from %f:%l\,,' .
+            \ '%f:%l:%c: %trror: %m,' .
+            \ '%f:%l:%c: %tarning: %m,' .
+            \ '%I%f:%l:%c: note: %m,' .
+            \ '%f:%l:%c: %m,' .
+            \ '%f:%l: %trror: %m,' .
+            \ '%f:%l: %tarning: %m,'.
+            \ '%I%f:%l: note: %m,'.
+            \ '%f:%l: %m',
+\ }
+let g:neomake_c_enabled_makers=['riscvgcc']
+set makeprg=make\ PROGRAM=%:t:r\ 2>&1
