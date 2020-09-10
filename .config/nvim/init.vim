@@ -17,7 +17,7 @@ Plug 'mhartington/oceanic-next'
 Plug 'zchee/deoplete-jedi'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'davidhalter/jedi-vim'
-Plug 'fatih/vim-go' { 'do': ':GoUpdateBinaries' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'psf/black', { 'branch': 'stable' }
 call plug#end()
 
@@ -59,7 +59,7 @@ set backspace=indent,eol,start
 
 " Python Neovim
 let g:python_host_prog = '/home/greg/.pyenv/versions/neovim2/bin/python'
-let g:python3_host_prog = '/home/greg/.pyenv/versions/neovim3/bin/python'
+let g:python3_host_prog = '/home/greg/.pyenv/versions/neovim/bin/python'
 
 " Neomake
 " When writing a buffer (no delay).
