@@ -16,7 +16,7 @@ function run_arg_array {
   fi
 }
 
-run compton -b
+run picom -b
 run autocutsel -selection PRIMARY -fork
 run autocutsel -fork
 run setxkbmap us -option caps:escape -option compose:ralt
