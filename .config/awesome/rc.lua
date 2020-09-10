@@ -259,7 +259,7 @@ globalkeys = my_table.join(
               {description = "take a screenshot", group = "hotkeys"}),
 
     -- X screen locker
-    awful.key({ altkey, "Control" }, "l", function () os.execute(scrlocker) end,
+    awful.key({ }, "Pause", function () os.execute(scrlocker) end,
               {description = "lock screen", group = "hotkeys"}),
 
     -- Hotkeys
@@ -552,7 +552,7 @@ globalkeys = my_table.join(
     awful.key({}, "F11", function () awful.util.spawn('amixer -- set Master 5%-') end),
     awful.key({}, "F12", function () awful.util.spawn('amixer -- set Master 5%+') end),
     awful.key({}, "Print", function () awful.util.spawn('sxlock') end),
-    awful.key({ modkey }, "Pause", function () awful.util.spawn("systemctl hibernate") end)
+    awful.key({ modkey }, "Pause", function () awful.util.spawn("systemctl suspend") end)
 
 )
 
