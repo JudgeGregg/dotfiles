@@ -96,7 +96,7 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR='nvim'
 export PAGER='less'
 export XDG_CONFIG=$HOME'/.config'
-export GOPATH=$HOME'/Projets/Go'
+export GOPATH=$HOME'/Projects/Go'
 export PATH=$PATH:$GOPATH'/bin'
 alias vi="nvim"
 alias ta="task"
@@ -104,3 +104,7 @@ alias o="nvr --remote-silent"
 alias t="nvr --remote-tab-silent"
 alias s="nvr -o"
 alias v="nvr -O"
+
+# RISC-V
+export RISCV_PATH=$HOME/Projects/HiFive/riscv64-unknown-elf-gcc-8.3.0-2019.08.0-x86_64-linux-ubuntu14
+export PATH=$PATH:$RISCV_PATH'/bin'
