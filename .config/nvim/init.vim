@@ -17,7 +17,8 @@ Plug 'mhartington/oceanic-next'
 Plug 'zchee/deoplete-jedi'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'davidhalter/jedi-vim'
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go' { 'do': ':GoUpdateBinaries' }
+Plug 'psf/black', { 'branch': 'stable' }
 call plug#end()
 
 " VISUAL
@@ -30,22 +31,25 @@ let g:lightline = {
 colorscheme nord
 set noshowmode
 
-let g:terminal_color_0  = '#303030'
-let g:terminal_color_1  = '#d75f5f'
-let g:terminal_color_2  = '#00af87'
-let g:terminal_color_3  = '#afd75f'
-let g:terminal_color_4  = '#5fafd7'
-let g:terminal_color_5  = '#8787af'
-let g:terminal_color_6  = '#00afd7'
-let g:terminal_color_7  = '#ffffff'
-let g:terminal_color_8  = '#a3a3a3'
-let g:terminal_color_9  = '#d787af'
-let g:terminal_color_10 = '#5faf5f'
-let g:terminal_color_11 = '#d7af5f'
-let g:terminal_color_12 = '#87afd7'
-let g:terminal_color_13 = '#8787d7'
-let g:terminal_color_14 = '#87afff'
-let g:terminal_color_15 = '#ffffff'
+" No swap file
+noswap
+
+"let g:terminal_color_0  = '#303030'
+"let g:terminal_color_1  = '#d75f5f'
+"let g:terminal_color_2  = '#00af87'
+"let g:terminal_color_3  = '#afd75f'
+"let g:terminal_color_4  = '#5fafd7'
+"let g:terminal_color_5  = '#8787af'
+"let g:terminal_color_6  = '#00afd7'
+"let g:terminal_color_7  = '#ffffff'
+"let g:terminal_color_8  = '#a3a3a3'
+"let g:terminal_color_9  = '#d787af'
+"let g:terminal_color_10 = '#5faf5f'
+"let g:terminal_color_11 = '#d7af5f'
+"let g:terminal_color_12 = '#87afd7'
+"let g:terminal_color_13 = '#8787d7'
+"let g:terminal_color_14 = '#87afff'
+"let g:terminal_color_15 = '#ffffff'
 
 " Set transparent background
 hi! Normal ctermbg=NONE guibg=NONE
@@ -79,6 +83,9 @@ let g:neoterm_default_mod = 'botright'
 " Switch to insert mode when entering terminal
 au BufEnter * if &buftype == 'terminal' | :startinsert | endif
 
+" LANGUAGE SPECIFICS
+" NerdCommenter use // in C files
+let g:NERDAltDelims_c = 1
 " RISCV gcc
 let g:neomake_c_riscvgcc_maker = {
     \ 'exe': 'riscv64-unknown-elf-gcc',
