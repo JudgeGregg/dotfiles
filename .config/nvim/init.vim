@@ -50,11 +50,11 @@ let g:ctrlp_use_caching = 0
 " Deoplete
 let g:deoplete#enable_at_startup = 1
 
-" Jedi-Vim
-let g:jedi#completions_enabled = 0
+" Deoplete + vim-go
+call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
 
-" NerdCommenter use // in C files
-let g:NERDAltDelims_c = 1
+" Deoplete + jedi-vim
+let g:jedi#completions_enabled = 0
 
 " Neoterm
 " Switch to new term in insert mode
@@ -63,6 +63,33 @@ let g:neoterm_default_mod = 'botright'
 
 " Switch to insert mode when entering terminal
 au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+
+
+" LANGUAGE SPECIFICS
+" NerdCommenter use // in C files
+let g:NERDAltDelims_c = 1
+" RISCV gcc
+let g:neomake_c_riscvgcc_maker = {
+    \ 'exe': 'riscv64-unknown-elf-gcc',
+    \ 'args': ['-fsyntax-only', '-Wall', '-Wextra', '-Ifreedom-metal', '-Ibsp/sifive-hifive1-revb/install/include'],
+    \ 'errorformat':
+            \ '%-G%f:%s:,' .
+            \ '%-G%f:%l: %#error: %#(Each undeclared identifier is reported only%.%#,' .
+            \ '%-G%f:%l: %#error: %#for each function it appears%.%#,' .
+            \ '%-GIn file included%.%#,' .
+            \ '%-G %#from %f:%l\,,' .
+            \ '%f:%l:%c: %trror: %m,' .
+            \ '%f:%l:%c: %tarning: %m,' .
+            \ '%I%f:%l:%c: note: %m,' .
+            \ '%f:%l:%c: %m,' .
+            \ '%f:%l: %trror: %m,' .
+            \ '%f:%l: %tarning: %m,'.
+            \ '%I%f:%l: note: %m,'.
+            \ '%f:%l: %m',
+       \ }
+let g:neomake_c_enabled_makers=['riscvgcc']
+" Merge stdout and stderr for neomake
+set makeprg=make\ PROGRAM=%:t:r\ 2>&1
 
 " SHORTKEYS
 map <Space> <leader>
@@ -96,25 +123,3 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-
-" Custom maker for RISC-V
-let g:neomake_c_riscvgcc_maker = {
-    \ 'exe': 'riscv64-unknown-elf-gcc',
-    \ 'args': ['-fsyntax-only', '-Wall', '-Wextra', '-Ifreedom-metal', '-Ibsp/sifive-hifive1-revb/install/include'],
-    \ 'errorformat':
-            \ '%-G%f:%s:,' .
-            \ '%-G%f:%l: %#error: %#(Each undeclared identifier is reported only%.%#,' .
-            \ '%-G%f:%l: %#error: %#for each function it appears%.%#,' .
-            \ '%-GIn file included%.%#,' .
-            \ '%-G %#from %f:%l\,,' .
-            \ '%f:%l:%c: %trror: %m,' .
-            \ '%f:%l:%c: %tarning: %m,' .
-            \ '%I%f:%l:%c: note: %m,' .
-            \ '%f:%l:%c: %m,' .
-            \ '%f:%l: %trror: %m,' .
-            \ '%f:%l: %tarning: %m,'.
-            \ '%I%f:%l: note: %m,'.
-            \ '%f:%l: %m',
-\ }
-let g:neomake_c_enabled_makers=['riscvgcc']
-set makeprg=make\ PROGRAM=%:t:r\ 2>&1

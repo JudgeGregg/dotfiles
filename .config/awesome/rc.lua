@@ -51,13 +51,14 @@ end
 -- {{{ Autostart windowless processes
 
 -- This function will run once every time Awesome is started
-local function run_once(cmd_arr)
-    for _, cmd in ipairs(cmd_arr) do
-        awful.spawn.with_shell(string.format("pgrep -u $USER -fx '%s' > /dev/null || (%s)", cmd, cmd))
-    end
-end
+--local function run_once(cmd_arr)
+    --for _, cmd in ipairs(cmd_arr) do
+        --awful.spawn.with_shell(string.format("pgrep -u $USER -fx '%s' > /dev/null || (%s)", cmd, cmd))
+    --end
+--end
+awful.spawn.with_shell("~/.config.awesome/autorun.sh")
 
-run_once({ "unclutter -root" }) -- entries must be comma-separated
+--run_once({ "unclutter -root" }) -- entries must be comma-separated
 
 -- This function implements the XDG autostart specification
 --[[
@@ -259,7 +260,7 @@ globalkeys = my_table.join(
               {description = "take a screenshot", group = "hotkeys"}),
 
     -- X screen locker
-    awful.key({ }, "Print", function () os.execute(scrlocker) end,
+    awful.key({ }, "Pause", function () os.execute(scrlocker) end,
               {description = "lock screen", group = "hotkeys"}),
 
     -- Hotkeys
