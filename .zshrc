@@ -95,7 +95,7 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR='nvim'
 export PAGER='less'
-export XDG_CONFIG=$HOME'/.config'
+export XDG_CONFIG_HOME=$HOME'/.config'
 export GOPATH=$HOME'/Projects/Go'
 export PATH=$PATH:$GOPATH'/bin'
 alias vi="nvim"
