@@ -108,3 +108,6 @@ alias v="nvr -O"
 # RISC-V
 export RISCV_PATH=$HOME/Projects/HiFive/riscv64-unknown-elf-gcc-8.3.0-2019.08.0-x86_64-linux-ubuntu14
 export PATH=$PATH:$RISCV_PATH'/bin'
+
+# Python Poetry
+export PATH="$HOME/.poetry/bin:$PATH"
