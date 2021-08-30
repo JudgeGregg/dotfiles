@@ -1,12 +1,10 @@
 " VIM PLUG
 call plug#begin('~/.config/nvim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'neomake/neomake'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdcommenter'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'Valloric/ListToggle'
 Plug 'arcticicestudio/nord-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'majutsushi/tagbar'
@@ -18,7 +16,7 @@ Plug 'zchee/deoplete-jedi'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'davidhalter/jedi-vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'psf/black', { 'branch': 'stable' }
+Plug 'neovim/nvim-lspconfig'
 call plug#end()
 
 " VISUAL
@@ -32,24 +30,7 @@ colorscheme nord
 set noshowmode
 
 " No swap file
-noswap
-
-"let g:terminal_color_0  = '#303030'
-"let g:terminal_color_1  = '#d75f5f'
-"let g:terminal_color_2  = '#00af87'
-"let g:terminal_color_3  = '#afd75f'
-"let g:terminal_color_4  = '#5fafd7'
-"let g:terminal_color_5  = '#8787af'
-"let g:terminal_color_6  = '#00afd7'
-"let g:terminal_color_7  = '#ffffff'
-"let g:terminal_color_8  = '#a3a3a3'
-"let g:terminal_color_9  = '#d787af'
-"let g:terminal_color_10 = '#5faf5f'
-"let g:terminal_color_11 = '#d7af5f'
-"let g:terminal_color_12 = '#87afd7'
-"let g:terminal_color_13 = '#8787d7'
-"let g:terminal_color_14 = '#87afff'
-"let g:terminal_color_15 = '#ffffff'
+noswapfile
 
 " Set transparent background
 hi! Normal ctermbg=NONE guibg=NONE
@@ -60,10 +41,6 @@ set backspace=indent,eol,start
 " Python Neovim
 let g:python_host_prog = '/home/greg/.pyenv/versions/neovim2/bin/python'
 let g:python3_host_prog = '/home/greg/.pyenv/versions/neovim/bin/python'
-
-" Neomake
-" When writing a buffer (no delay).
-call neomake#configure#automake('w')
 
 " Ctrl-P
 let g:ctrlp_user_command ="ag %s -l -g ''"
@@ -82,32 +59,6 @@ let g:neoterm_default_mod = 'botright'
 
 " Switch to insert mode when entering terminal
 au BufEnter * if &buftype == 'terminal' | :startinsert | endif
-
-" LANGUAGE SPECIFICS
-" NerdCommenter use // in C files
-let g:NERDAltDelims_c = 1
-" RISCV gcc
-let g:neomake_c_riscvgcc_maker = {
-    \ 'exe': 'riscv64-unknown-elf-gcc',
-    \ 'args': ['-fsyntax-only', '-Wall', '-Wextra', '-Ifreedom-metal', '-Ibsp/sifive-hifive1-revb/install/include'],
-    \ 'errorformat':
-            \ '%-G%f:%s:,' .
-            \ '%-G%f:%l: %#error: %#(Each undeclared identifier is reported only%.%#,' .
-            \ '%-G%f:%l: %#error: %#for each function it appears%.%#,' .
-            \ '%-GIn file included%.%#,' .
-            \ '%-G %#from %f:%l\,,' .
-            \ '%f:%l:%c: %trror: %m,' .
-            \ '%f:%l:%c: %tarning: %m,' .
-            \ '%I%f:%l:%c: note: %m,' .
-            \ '%f:%l:%c: %m,' .
-            \ '%f:%l: %trror: %m,' .
-            \ '%f:%l: %tarning: %m,'.
-            \ '%I%f:%l: note: %m,'.
-            \ '%f:%l: %m',
-	\ }
-let g:neomake_c_enabled_makers=['riscvgcc']
-" Merge stdout and stderr for neomake
-set makeprg=make\ PROGRAM=%:t:r\ 2>&1
 
 " SHORTKEYS
 map <Space> <leader>
