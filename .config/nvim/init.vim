@@ -143,10 +143,10 @@ local on_attach = function(client, bufnr)
 end
 
 -- Setup python and golang servers
-lspconfig.pyls.setup { on_attach = on_attach }
+lspconfig.pylsp.setup { on_attach = on_attach }
 lspconfig.gopls.setup {
     on_attach = on_attach,
-    cmd = {"gopls", "serve"},
+    cmd = {"gopls"},
     settings = {
       gopls = {
         analyses = {
