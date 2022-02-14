@@ -17,9 +17,9 @@ function run_arg_array {
 }
 
 run picom -b
-run autocutsel -selection PRIMARY -fork
-run autocutsel -fork
-run setxkbmap us -option caps:escape -option compose:ralt
+autocutsel -selection PRIMARY -fork
+autocutsel -fork
+setxkbmap us -option caps:escape -option compose:ralt
 run xss-lock -- slock
 #Bash dark magic because quotes
 arg_array=(xautolock -time 10 -locker 'xset dpms force off')
