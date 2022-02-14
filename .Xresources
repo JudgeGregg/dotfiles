@@ -171,3 +171,9 @@ URxvt.cursorColor : #d787af
 !underline        : xoria256.htmlValue.guifg
 URxvt.colorBD     : #5fafd7
 URxvt.colorUL     : #00afd7
+
+xterm*Background:#303030
+xterm*Foreground:#a8a8a8
+xterm*faceName:          IBM plex mono
+xterm*faceSize:          10
+xterm*limitFontsets:          1000
