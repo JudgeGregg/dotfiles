@@ -3,19 +3,16 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdcommenter'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 Plug 'arcticicestudio/nord-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'majutsushi/tagbar'
 Plug 'rking/ag.vim'
 Plug 'kassio/neoterm'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/deoplete-lsp',
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'}
+Plug 'Shougo/deoplete-lsp'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'davidhalter/jedi-vim',
-Plug 'zchee/deoplete-jedi',
 Plug 'neovim/nvim-lspconfig'
+Plug 'psf/black', { 'branch': 'stable' }
 call plug#end()
 
 " VISUAL
@@ -29,7 +26,7 @@ colorscheme nord
 set noshowmode
 
 " No swap file
-noswapfile
+set noswapfile
 
 " Set transparent background
 hi! Normal ctermbg=NONE guibg=NONE
@@ -38,8 +35,8 @@ hi! Normal ctermbg=NONE guibg=NONE
 set backspace=indent,eol,start
 
 " Python Neovim
-let g:python_host_prog = '/home/greg/.pyenv/versions/neovim2/bin/python'
-let g:python3_host_prog = '/home/greg/.pyenv/versions/neovim/bin/python'
+let g:python_host_prog = '/home/gjuge/.pyenv/versions/neovim2/bin/python2'
+let g:python3_host_prog = '/home/gjuge/.pyenv/versions/neovim/bin/python'
 
 " Ctrl-P
 let g:ctrlp_user_command ="ag %s -l -g ''"
@@ -48,10 +45,6 @@ let g:ctrlp_use_caching = 0
 " Deoplete
 let g:deoplete#enable_at_startup = 1
 
-" Jedi-Vim
-" Deactivate completions
-let g:jedi#completions_enabled = 0
-
 " Neoterm
 " Switch to new term in insert mode
 let g:neoterm_autoinsert = 1
@@ -59,6 +52,11 @@ let g:neoterm_default_mod = 'botright'
 
 " Switch to insert mode when entering terminal
 au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+
+
+" LANGUAGE SPECIFICS
+" NerdCommenter use // in C files
+let g:NERDAltDelims_c = 1
 
 " SHORTKEYS
 map <Space> <leader>
@@ -79,23 +77,29 @@ nnoremap <M-l> gt
 nnoremap <M-h> gT
 tnoremap <M-l> <C-\><C-N>gt
 tnoremap <M-h> <C-\><C-N>gT
-tnoremap <C-h> <C-\><C-N><C-w>h
-tnoremap <C-j> <C-\><C-N><C-w>j
-tnoremap <C-k> <C-\><C-N><C-w>k
-tnoremap <C-l> <C-\><C-N><C-w>l
+tnoremap <C-w>h <C-\><C-N><C-w>h
+tnoremap <C-w>j <C-\><C-N><C-w>j
+tnoremap <C-w>k <C-\><C-N><C-w>k
+tnoremap <C-w>l <C-\><C-N><C-w>l
+tnoremap <C-w>w <C-\><C-N><C-w>w
+tnoremap <C-w><C-h> <C-\><C-N><C-w>h
+tnoremap <C-w><C-j> <C-\><C-N><C-w>j
+tnoremap <C-w><C-k> <C-\><C-N><C-w>k
+tnoremap <C-w><C-l> <C-\><C-N><C-w>l
+tnoremap <C-w><C-w> <C-\><C-N><C-w>w
 tnoremap <C-s> <C-\><C-N>
-inoremap <C-h> <C-\><C-N><C-w>h
-inoremap <C-j> <C-\><C-N><C-w>j
-inoremap <C-k> <C-\><C-N><C-w>k
-inoremap <C-l> <C-\><C-N><C-w>l
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+inoremap <C-w>h <C-\><C-N><C-w>h
+inoremap <C-w>j <C-\><C-N><C-w>j
+inoremap <C-w>k <C-\><C-N><C-w>k
+inoremap <C-w>l <C-\><C-N><C-w>l
+inoremap <C-w><C-h> <C-\><C-N><C-w>h
+inoremap <C-w><C-j> <C-\><C-N><C-w>j
+inoremap <C-w><C-k> <C-\><C-N><C-w>k
+inoremap <C-w><C-l> <C-\><C-N><C-w>l
+inoremap <C-w><C-w> <C-\><C-N><C-w>w
 
-" LSP CONFIG
 lua << EOF
-local lspconfig = require('lspconfig')
+local nvim_lsp = require('lspconfig')
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
@@ -108,7 +112,7 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
   buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
   buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  buf_set_keymap('n', '<space>k', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+  buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
   buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
   buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
   buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
@@ -142,11 +146,11 @@ local on_attach = function(client, bufnr)
   end
 end
 
--- Setup python and golang servers
-lspconfig.pylsp.setup { on_attach = on_attach }
-lspconfig.gopls.setup {
-    on_attach = on_attach,
-    cmd = {"gopls"},
+-- Use a loop to conveniently both setup defined servers
+-- and map buffer local keybindings when the language server attaches
+local servers = { "pylsp", "gopls" }
+nvim_lsp.pylsp.setup { on_attach = on_attach }
+nvim_lsp["gopls"].setup { on_attach = on_attach,
     settings = {
       gopls = {
         analyses = {
@@ -155,5 +159,45 @@ lspconfig.gopls.setup {
         staticcheck = true,
       },
     },
-  }
+}
+EOF
+
+" test
+lua << EOF
+local severity_map = { "E", "W", "I", "H" }
+
+local parse_diagnostics = function(diagnostics)
+  if not diagnostics then return end
+  local items = {}
+  for _, diagnostic in ipairs(diagnostics) do
+    local fname = vim.fn.bufname()
+    local position = diagnostic.range.start
+    local severity = diagnostic.severity
+    table.insert(items, {
+      filename = fname,
+      type = severity_map[severity],
+      lnum = position.line + 1,
+      col = position.character + 1,
+      text = diagnostic.message:gsub("\r", ""):gsub("\n", " ")
+    })
+  end
+  return items
+end
+
+-- redefine unwanted callbacks to be an empty function
+-- notice that I keep `vim.lsp.util.buf_diagnostics_underline()`
+vim.lsp.util.buf_diagnostics_signs = function() return end
+vim.lsp.util.buf_diagnostics_virtual_text = function() return end
+
+update_diagnostics_loclist = function()
+  bufnr = vim.fn.bufnr()
+  diagnostics = vim.lsp.util.diagnostics_by_buf[bufnr]
+
+  items = parse_diagnostics(diagnostics)
+  vim.lsp.util.set_loclist(items)
+
+  vim.api.nvim_command("doautocmd QuickFixCmdPost")
+end
+
+vim.api.nvim_command [[autocmd! User LspDiagnosticsChanged lua update_diagnostics_loclist()]]
 EOF
