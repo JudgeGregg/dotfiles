@@ -545,9 +545,9 @@ globalkeys = my_table.join(
               {description = "lua execute prompt", group = "awesome"}),
     --]]
     -- My Keys
-    awful.key({}, "F5", function () awful.util.spawn('playerctl play-pause') end),
-    awful.key({}, "F7", function () awful.util.spawn('playerctl previous') end),
-    awful.key({}, "F8", function () awful.util.spawn('playerctl next') end),
+    awful.key({}, "F5", function () awful.util.spawn('playerctl -p spotify play-pause') end),
+    awful.key({}, "F7", function () awful.util.spawn('playerctl -p spotify previous') end),
+    awful.key({}, "F8", function () awful.util.spawn('playerctl -p spotify next') end),
     awful.key({}, "F10", function () awful.util.spawn('amixer -- set Master toggle') end),
     awful.key({}, "F11", function () awful.util.spawn('amixer -- set Master 5%-') end),
     awful.key({}, "F12", function () awful.util.spawn('amixer -- set Master 5%+') end),
