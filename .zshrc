@@ -59,12 +59,15 @@ ZSH_THEME="spaceship"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  autojump git pip systemd vi-mode
+  autojump git pip systemd taskwarrior vi-mode spaceship-vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+
+# 10 ms key timeout
+export KEYTIMEOUT=1
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -93,11 +96,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export EDITOR='nvim'
-export PAGER='less'
-export XDG_CONFIG_HOME=$HOME'/.config'
-export GOPATH=$HOME'/Projects/Go'
-export PATH=$PATH:$GOPATH'/bin'
 alias vi="nvim"
 alias ta="task"
 alias o="nvr --remote-silent"
@@ -105,13 +103,21 @@ alias t="nvr --remote-tab-silent"
 alias s="nvr -o"
 alias v="nvr -O"
 
-# RISC-V
-export RISCV_PATH=$HOME/Projects/HiFive/riscv64-unknown-elf-gcc-8.3.0-2019.08.0-x86_64-linux-ubuntu14
-export PATH=$PATH:$RISCV_PATH'/bin'
+# Spaceship vi-mode to include after line break
+spaceship add --after line_sep vi_mode
+eval spaceship_vi_mode_enable
 
-# Python Poetry
-export PATH="$HOME/.poetry/bin:$PATH"
+#Loix
+#export LOIX_ROOT=$HOME/Projects/Python/loix
 
-# Pyenv
+alias oxy="$HOME/oxygen/Oxygen\ XML\ Editor\ 18/oxygen.sh"
+
+#Pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+#FZF
+source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
