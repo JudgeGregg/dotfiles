@@ -66,8 +66,6 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# 10 ms key timeout
-export KEYTIMEOUT=1
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -107,9 +105,6 @@ alias v="nvr -O"
 spaceship add --after line_sep vi_mode
 eval spaceship_vi_mode_enable
 
-#Loix
-#export LOIX_ROOT=$HOME/Projects/Python/loix
-
 alias oxy="$HOME/oxygen/Oxygen\ XML\ Editor\ 18/oxygen.sh"
 
 #Pyenv
@@ -121,3 +116,7 @@ eval "$(pyenv virtualenv-init -)"
 #FZF
 source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
+bindkey -M vicmd '/' fzf-history-widget
+bindkey -M viins '\e/' fzf-history-widget
+# 150 ms key timeout
+export KEYTIMEOUT=15
