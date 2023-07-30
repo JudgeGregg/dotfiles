@@ -105,8 +105,6 @@ alias v="nvr -O"
 spaceship add --after line_sep vi_mode
 eval spaceship_vi_mode_enable
 
-alias oxy="$HOME/oxygen/Oxygen\ XML\ Editor\ 18/oxygen.sh"
-
 #Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
@@ -118,5 +116,18 @@ source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
 bindkey -M vicmd '/' fzf-history-widget
 bindkey -M viins '\e/' fzf-history-widget
+# Shift + Backspace, needed for zsh in neovim in Kitty (https://sw.kovidgoyal.net/kitty/keyboard-protocol/)
+bindkey -M viins '\x1b[127;2u' backward-delete-char
 # 150 ms key timeout
 export KEYTIMEOUT=15
+
+# use the vi navigation keys in menu completion
+bindkey -M menuselect 'h' vi-backward-char
+bindkey -M menuselect 'k' vi-up-line-or-history
+bindkey -M menuselect 'l' vi-forward-char
+bindkey -M menuselect 'j' vi-down-line-or-history
+
+# replace less with bat
+if command -v bat &> /dev/null; then
+    alias less="bat"
+fi
