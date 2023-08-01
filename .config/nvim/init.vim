@@ -1,56 +1,45 @@
 " VIM PLUG
 call plug#begin('~/.config/nvim/plugged')
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/nerdcommenter'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'arcticicestudio/nord-vim'
+Plug 'preservim/nerdcommenter'
+Plug 'preservim/tagbar'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'itchyny/lightline.vim'
-Plug 'majutsushi/tagbar'
 Plug 'rking/ag.vim'
 Plug 'kassio/neoterm'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/deoplete-lsp',
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins'}
+Plug 'Shougo/deoplete-lsp'
+Plug 'psf/black', { 'branch': 'stable' }
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'davidhalter/jedi-vim',
-Plug 'zchee/deoplete-jedi',
+Plug 'junegunn/fzf'
 Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 call plug#end()
 
 " VISUAL
 set number
 set listchars=tab:▸\ ,eol:¬
 set termguicolors
-let g:lightline = {
-      \ 'colorscheme': 'nord',
-      \ }
-colorscheme nord
+colorscheme catppuccin-macchiato
+let g:lightline = {'colorscheme': 'one'}
 set noshowmode
+set cursorline
 
 " No swap file
-noswapfile
+set noswapfile
 
 " Set transparent background
-hi! Normal ctermbg=NONE guibg=NONE
+" hi! Normal ctermbg=NONE guibg=NONE
 
 " Copy the previous indentation on autoindenting
 set backspace=indent,eol,start
 
 " Python Neovim
-let g:python_host_prog = '/home/greg/.pyenv/versions/neovim2/bin/python'
+let g:python_host_prog = '/home/greg/.pyenv/versions/neovim2/bin/python2'
 let g:python3_host_prog = '/home/greg/.pyenv/versions/neovim/bin/python'
-
-" Ctrl-P
-let g:ctrlp_user_command ="ag %s -l -g ''"
-let g:ctrlp_use_caching = 0
 
 " Deoplete
 let g:deoplete#enable_at_startup = 1
-
-" Jedi-Vim
-" Deactivate completions
-let g:jedi#completions_enabled = 0
 
 " Neoterm
 " Switch to new term in insert mode
@@ -62,6 +51,7 @@ au BufEnter * if &buftype == 'terminal' | :startinsert | endif
 
 " SHORTKEYS
 map <Space> <leader>
+nnoremap <leader>ff <Esc>:FZF<CR>
 nnoremap <leader>a <Esc>:Ag<CR>
 nnoremap <leader>T <Esc>:TagbarToggle<CR>
 nnoremap <leader>L <Esc>:set list!<CR>
@@ -79,74 +69,72 @@ nnoremap <M-l> gt
 nnoremap <M-h> gT
 tnoremap <M-l> <C-\><C-N>gt
 tnoremap <M-h> <C-\><C-N>gT
-tnoremap <C-h> <C-\><C-N><C-w>h
-tnoremap <C-j> <C-\><C-N><C-w>j
-tnoremap <C-k> <C-\><C-N><C-w>k
-tnoremap <C-l> <C-\><C-N><C-w>l
+tnoremap <C-w>h <C-\><C-N><C-w>h
+tnoremap <C-w>j <C-\><C-N><C-w>j
+tnoremap <C-w>k <C-\><C-N><C-w>k
+tnoremap <C-w>l <C-\><C-N><C-w>l
+tnoremap <C-w>w <C-\><C-N><C-w>w
+tnoremap <C-w><C-h> <C-\><C-N><C-w>h
+tnoremap <C-w><C-j> <C-\><C-N><C-w>j
+tnoremap <C-w><C-k> <C-\><C-N><C-w>k
+tnoremap <C-w><C-l> <C-\><C-N><C-w>l
+tnoremap <C-w><C-w> <C-\><C-N><C-w>w
 tnoremap <C-s> <C-\><C-N>
-inoremap <C-h> <C-\><C-N><C-w>h
-inoremap <C-j> <C-\><C-N><C-w>j
-inoremap <C-k> <C-\><C-N><C-w>k
-inoremap <C-l> <C-\><C-N><C-w>l
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+inoremap <C-w>h <C-\><C-N><C-w>h
+inoremap <C-w>j <C-\><C-N><C-w>j
+inoremap <C-w>k <C-\><C-N><C-w>k
+inoremap <C-w>l <C-\><C-N><C-w>l
+inoremap <C-w><C-h> <C-\><C-N><C-w>h
+inoremap <C-w><C-j> <C-\><C-N><C-w>j
+inoremap <C-w><C-k> <C-\><C-N><C-w>k
+inoremap <C-w><C-l> <C-\><C-N><C-w>l
+inoremap <C-w><C-w> <C-\><C-N><C-w>w
 
-" LSP CONFIG
+" LSP Config
 lua << EOF
+-- Global mappings.
+-- See `:help vim.diagnostic.*` for documentation on any of the below functions
+vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
+
+-- Use LspAttach autocommand to only map the following keys
+-- after the language server attaches to the current buffer
+vim.api.nvim_create_autocmd('LspAttach', {
+  group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+  callback = function(ev)
+    -- Enable completion triggered by <c-x><c-o>
+    vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+
+    -- Buffer local mappings.
+    -- See `:help vim.lsp.*` for documentation on any of the below functions
+    local opts = { buffer = ev.buf }
+    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+    vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, opts)
+    vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, opts)
+    vim.keymap.set('n', '<space>wl', function()
+      print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+    end, opts)
+    vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, opts)
+    vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, opts)
+    vim.keymap.set({ 'n', 'v' }, '<space>ca', vim.lsp.buf.code_action, opts)
+    vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
+    vim.keymap.set('n', '<space>f', function()
+      vim.lsp.buf.format { async = true }
+    end, opts)
+  end,
+})
+
+-- Use a loop to conveniently both setup defined servers
+-- and map buffer local keybindings when the language server attaches
 local lspconfig = require('lspconfig')
-local on_attach = function(client, bufnr)
-  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-
-  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
-
-  -- Mappings.
-  local opts = { noremap=true, silent=true }
-  buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
-  buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  buf_set_keymap('n', '<space>k', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-  buf_set_keymap('n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-  buf_set_keymap('n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-  buf_set_keymap('n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
-  buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-  buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-  buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  buf_set_keymap('n', '<space>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', opts)
-  buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
-  buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
-  buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
-
-  -- Set some keybinds conditional on server capabilities
-  if client.resolved_capabilities.document_formatting then
-    buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
-  elseif client.resolved_capabilities.document_range_formatting then
-    buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>", opts)
-  end
-
-  -- Set autocommands conditional on server_capabilities
-  if client.resolved_capabilities.document_highlight then
-    vim.api.nvim_exec([[
-      hi LspReferenceRead cterm=bold ctermbg=red guibg=LightYellow
-      hi LspReferenceText cterm=bold ctermbg=red guibg=LightYellow
-      hi LspReferenceWrite cterm=bold ctermbg=red guibg=LightYellow
-      augroup lsp_document_highlight
-        autocmd! * <buffer>
-        autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-        autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-      augroup END
-    ]], false)
-  end
-end
-
--- Setup python and golang servers
-lspconfig.pylsp.setup { on_attach = on_attach }
+lspconfig.pylsp.setup {}
 lspconfig.gopls.setup {
-    on_attach = on_attach,
-    cmd = {"gopls"},
     settings = {
       gopls = {
         analyses = {
@@ -155,5 +143,15 @@ lspconfig.gopls.setup {
         staticcheck = true,
       },
     },
-  }
+}
+EOF
+
+" Treesitter config
+lua << EOF
+require('nvim-treesitter.configs').setup {
+  -- one of "all", "maintained" (parsers with maintainers),
+  -- or a list of languages
+  ensure_installed = { "python", "go", "comment" },
+  highlight = { enable = true},
+}
 EOF
